@@ -113,5 +113,6 @@ The lesson is not that LLMs are useless for optimization. The lesson is that the
 | extracted baseline reproduces 1008 | official-seed evaluator run | done |
 | seed-specific config matters quantitatively | official-seed ablation | done |
 | flow penalty matters quantitatively | official-seed ablation | done |
-| no-globals ablation drops below 1008 | simulator experiment | pending |
+| no-globals ablation drops below 1008 | official-seed ablation | done |
+| `limit.md` impossibility proof is contradicted | official-seed evaluator run | done |
 | custom layout matters quantitatively | simulator experiment | pending |

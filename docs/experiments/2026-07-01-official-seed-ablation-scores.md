@@ -8,6 +8,8 @@ Code:
 - `solutions/ours/c15da13c3eaa-default-config-only.py`
 - `solutions/ours/c15da13c3eaa-no-flow-penalty.py`
 - `solutions/ours/c15da13c3eaa-no-jitter.py`
+- `solutions/ours/c15da13c3eaa-no-shared-brain.py`
+- `solutions/ours/c15da13c3eaa-no-shared-brain-cached-world.py`
 - `solutions/ours/c15da13c3eaa-short-window-16.py`
 - `scripts/run-evaluation.mjs`
 
@@ -30,6 +32,8 @@ npm run eval:policy -- solutions/public/c15da13c3eaa.py --label c15da13c3eaa
 npm run eval:policy -- solutions/ours/c15da13c3eaa-default-config-only.py --label c15da13c3eaa-default-config-only
 npm run eval:policy -- solutions/ours/c15da13c3eaa-no-flow-penalty.py --label c15da13c3eaa-no-flow-penalty
 npm run eval:policy -- solutions/ours/c15da13c3eaa-no-jitter.py --label c15da13c3eaa-no-jitter
+npm run eval:policy -- solutions/ours/c15da13c3eaa-no-shared-brain.py --label c15da13c3eaa-no-shared-brain
+npm run eval:policy -- solutions/ours/c15da13c3eaa-no-shared-brain-cached-world.py --label c15da13c3eaa-no-shared-brain-cached-world
 npm run eval:policy -- solutions/ours/c15da13c3eaa-short-window-16.py --label c15da13c3eaa-short-window-16
 ```
 
@@ -41,6 +45,8 @@ Result:
 | default config only | 1000 | 336, 333, 331 | -8 | 3 | 12.70s |
 | no flow penalty | 992 | 334, 330, 328 | -16 | 13 | 13.18s |
 | no jitter | 1001 | 334, 336, 331 | -7 | 8 | 12.19s |
+| no shared brain | timed out | 172, -, - | invalid | 4,813 on completed seed | 180.00s |
+| no shared brain, cached world | 492 | 172, 153, 167 | -516 | 14,305 | 68.82s |
 | short window 16 | 997 | 334, 336, 327 | -11 | 2 | 9.78s |
 
 Interpretation:
@@ -53,8 +59,10 @@ The soft flow penalty is the largest of these first ablations at -16 deliveries 
 
 Shortening the reservation horizon to 16 costs 11 deliveries while reducing runtime, which gives a useful speed/score knob for future search.
 
+The no-shared-brain result is the major result for the postmortem. A strict no-shared-state version times out after completing one seed because it rebuilds the world and distance fields on every robot call. A fairer version that keeps only static world/distance caching, but removes persistent robot-planner state, finishes and scores 492. It produces 14,305 blocked moves versus 4 in the baseline. This isolates the real reason the 1000 result was possible: cross-robot/cross-tick planner state and coordinated reservations, not just layout or seed tuning.
+
 Next:
 
-- Add ablations for no edge reservations and no shared `_BRAIN`.
+- Add ablations for no edge reservations.
 - Compare the same planner against canonical and wide-avenue layouts.
 - Run repeated local variants only when the policy contains jitter; otherwise deterministic runs should be stable for these seeds.

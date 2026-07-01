@@ -19,6 +19,8 @@ It also contains the beginning of the analysis track:
 - `docs/technical-writeup-outline.md` is the draft structure for the blog-style
   technical article.
 - `docs/evaluator-status.md` records the current simulator/evaluator gap.
+- `docs/limit-argument-review.md` compares the failed 1000-impossible
+  argument against local official-seed measurements.
 - `data/public-leaderboard-snapshot.json` preserves the public leaderboard facts
   used by the analysis.
 - `data/evaluation-results.json` records local official-seed scores for the

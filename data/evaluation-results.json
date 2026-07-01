@@ -49,6 +49,27 @@
       "policy_time_seconds": 12.188851
     },
     {
+      "policy": "solutions/ours/c15da13c3eaa-no-shared-brain.py",
+      "label": "c15da13c3eaa-no-shared-brain",
+      "status": "timed_out",
+      "score": 0,
+      "completed_seed_scores": [172],
+      "completed_seed_blocked_moves": [4813],
+      "completed_seed_policy_time_seconds": [121.033989],
+      "error": "policy time budget exceeded during seed 'dfbf918495ee4fca8d50b53456d59fa8' (1/3 seeds completed): 179.937s > 179.936s",
+      "policy_time_seconds": 180.000996
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-no-shared-brain-cached-world.py",
+      "label": "c15da13c3eaa-no-shared-brain-cached-world",
+      "score": 492,
+      "seed_scores": [172, 153, 167],
+      "delta_vs_baseline": -516,
+      "blocked_moves": 14305,
+      "remaining_distance": 6558,
+      "policy_time_seconds": 68.823566
+    },
+    {
       "policy": "solutions/ours/c15da13c3eaa-short-window-16.py",
       "label": "c15da13c3eaa-short-window-16",
       "score": 997,

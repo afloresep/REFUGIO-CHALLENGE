@@ -91,4 +91,6 @@ When the simulator is available, every numeric claim in the writeup should point
 - [x] Document current evaluator gap.
 - [x] Confirm local evaluator availability.
 - [x] Score first ablation variants.
-- [ ] Add no-edge-reservation and no-shared-brain ablations.
+- [x] Add no-shared-brain ablations.
+- [x] Review external `limit.md` 1000-impossible argument.
+- [ ] Add no-edge-reservation ablation.
