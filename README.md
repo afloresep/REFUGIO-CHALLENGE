@@ -1,10 +1,27 @@
 # Refugio 2026
 
-Self-hosted implementation of the public REFUGIO hackathon surfaces:
+This repo is the working bench for a technical postmortem and follow-up solver
+work on the REFUGIO warehouse challenge.
+
+It currently includes a self-hosted implementation of the public hackathon
+surfaces:
 
 - replay viewer backed by bundled `public/replays/*.json` payloads
 - extracted Python templates from the instructions page
 - deterministic safety checker with LLM-style review text
+
+It also contains the beginning of the analysis track:
+
+- `docs/challenge-brief.md` captures the challenge contract and the 921 vs 1008
+  scoring distinction.
+- `docs/research-plan.md` lays out the experiments needed for the technical
+  postmortem.
+- `docs/technical-writeup-outline.md` is the draft structure for the blog-style
+  technical article.
+- `docs/evaluator-status.md` records the current simulator/evaluator gap.
+- `data/public-leaderboard-snapshot.json` preserves the public leaderboard facts
+  used by the analysis.
+- `scripts/analyze-replays.mjs` summarizes vendored replay payloads.
 
 ## Run
 
@@ -21,6 +38,27 @@ Open `http://127.0.0.1:3002`.
 - `/templates` renders the extracted Python templates.
 - `/review` checks a Python policy against local safety rules.
 - `/replays/bf4184ae5b49` loads and renders a public replay.
+
+## Analysis
+
+Summarize the bundled public replays:
+
+```bash
+npm run analyze:replays
+npm run analyze:replays -- --json
+```
+
+Extract and inspect a public policy:
+
+```bash
+npm run fetch:public-code -- c15da13c3eaa
+npm run analyze:policy -- solutions/public/c15da13c3eaa.py
+npm run make:ablations
+```
+
+The leaderboard raw score is a three-seed aggregate. The bundled replay JSON for
+each job is one 300-tick payload, so its `total_deliveries` is expected to be
+roughly one third of the public raw score for high-scoring jobs.
 
 ## Replay extraction
 
