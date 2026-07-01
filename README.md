@@ -74,3 +74,9 @@ payloads are vendored under `public/replays/` and read from disk by the app.
 The public site originally embedded replay data in Next Flight script chunks. The
 parser in `src/lib/refugio-replay.ts` is kept so additional public payloads can be
 ingested deliberately, but normal app routes use local data only.
+
+## Research notes
+
+- [Theoretical upper bound analysis](docs/theoretical-upper-bound.md) documents
+  the strongest certified delivery ceiling found for the hidden-seed warehouse
+  runs and explains why the exact maximum remains unproved.
