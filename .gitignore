@@ -1,9 +1,11 @@
 .next/
 node_modules/
+__pycache__/
 out/
 dist/
 build/
 coverage/
 tsconfig.tsbuildinfo
+outputs/
 .env*.local
 !.env.example

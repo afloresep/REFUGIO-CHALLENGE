@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "analyze:policy": "node scripts/analyze-policy.mjs",
+    "analyze:replays": "node scripts/analyze-replays.mjs",
+    "eval:policy": "node scripts/run-evaluation.mjs",
+    "fetch:public-code": "node scripts/fetch-public-code.mjs",
+    "make:ablations": "node scripts/create-ablation-variants.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

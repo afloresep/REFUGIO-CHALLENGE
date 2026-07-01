@@ -89,5 +89,6 @@ When the simulator is available, every numeric claim in the writeup should point
 - [x] Add static analyzer for policy features.
 - [x] Generate first ablation input files.
 - [x] Document current evaluator gap.
-- [ ] Add or recover simulator.
-- [ ] Score ablation variants.
+- [x] Confirm local evaluator availability.
+- [x] Score first ablation variants.
+- [ ] Add no-edge-reservation and no-shared-brain ablations.

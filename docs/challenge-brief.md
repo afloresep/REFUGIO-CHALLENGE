@@ -24,6 +24,12 @@ This is the working technical brief for the REFUGIO warehouse challenge. It is b
 - Raw score is total deliveries across the three official seeds.
 - The public replay bundled for a job is a single 300-tick run, not the three-seed aggregate.
 
+Official seeds used for local reproduction:
+
+- `bff0fb14575b4676b1f0f01bfc7b0126`
+- `dfbf918495ee4fca8d50b53456d59fa8`
+- `546a597410b049de82f7ce72fe7fd714`
+
 ## Robot Cycle
 
 1. A robot starts empty at its base-entry cell with a target shelf.
@@ -91,7 +97,6 @@ The important public jobs for first-pass analysis are:
 
 ## What We Still Need
 
-- Score the generated ablation variants under a local or recovered evaluator.
-- Obtain or rebuild enough of the local simulator to reproduce official-style three-seed evaluation.
+- Score the generated ablation variants under the local evaluator.
 - Re-run the public best code under controlled variants: no globals, no seed fingerprinting, no custom layout, no flow penalty, lower planning window.
 - Build upper-bound calculations that account for traffic conflicts, base-entry throughput, and pickup access, not just robot round-trip lengths.

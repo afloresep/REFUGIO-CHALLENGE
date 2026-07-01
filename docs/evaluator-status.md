@@ -1,27 +1,37 @@
 # Evaluator Status
 
-As of 2026-07-01, this repo does not contain the executable REFUGIO evaluator.
+As of 2026-07-01, the executable REFUGIO evaluator is available to this Python
+environment through the original starter kit, but it is not vendored in this
+repo.
 
-Checked locally:
+Current import resolution:
 
-```bash
-rg --files | rg '(^|/)(warehouse|eval|runner|sim|simulation|local_runner|eval_runner)'
-rg -n "warehouse_api|local_runner|eval_runner|validate_layout|class Observation|enum Action" .
+```text
+warehouse /Users/afloresep/Downloads/refugio-starter-kit/warehouse/__init__.py
+warehouse_api /Users/afloresep/Downloads/refugio-starter-kit/warehouse_api/__init__.py
 ```
 
-Result:
+Confirmed locally:
 
-- No local `warehouse` package.
-- No local `warehouse_api` implementation.
-- No `warehouse.local_runner`, `warehouse.eval_runner`, or `warehouse.validate_layout` source.
-- The only evaluator references are in the instruction page, templates, and extracted policies.
+```bash
+python3 -c "import warehouse, warehouse_api"
+python3 -m warehouse.eval_runner --help
+```
 
-Implication:
+Official seeds:
 
-The ablation inputs under `solutions/ours/` are ready, but they cannot be scored inside this repo until we recover, rebuild, or reimplement the evaluator.
+```text
+bff0fb14575b4676b1f0f01bfc7b0126
+dfbf918495ee4fca8d50b53456d59fa8
+546a597410b049de82f7ce72fe7fd714
+```
 
-Next evaluator options:
+Use the npm wrapper:
 
-- Find the original starter kit or package distributed during the hackathon.
-- Reconstruct a compatible simulator from the public rules and replay schema.
-- Use public replay data only for descriptive analysis, not policy scoring.
+```bash
+npm run eval:policy -- solutions/public/c15da13c3eaa.py --label c15da13c3eaa
+```
+
+Evaluation outputs are written to `outputs/evals/` and gitignored.
+
+The first local score summary is committed in `data/evaluation-results.json`.

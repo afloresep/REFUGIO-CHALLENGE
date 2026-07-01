@@ -110,6 +110,8 @@ The lesson is not that LLMs are useless for optimization. The lesson is that the
 | bundled `c15da13c3eaa` replay has 337 deliveries | replay script | done |
 | best policy uses module-global shared state | public code extraction + static analyzer | done |
 | best policy uses seed-specific config | public code extraction + static analyzer | done |
+| extracted baseline reproduces 1008 | official-seed evaluator run | done |
+| seed-specific config matters quantitatively | official-seed ablation | done |
+| flow penalty matters quantitatively | official-seed ablation | done |
 | no-globals ablation drops below 1008 | simulator experiment | pending |
-| seed-specific config matters quantitatively | simulator experiment | pending |
 | custom layout matters quantitatively | simulator experiment | pending |

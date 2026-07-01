@@ -1,0 +1,62 @@
+{
+  "captured_on": "2026-07-01",
+  "evaluator": "python3 -m warehouse.eval_runner",
+  "seeds": [
+    "bff0fb14575b4676b1f0f01bfc7b0126",
+    "dfbf918495ee4fca8d50b53456d59fa8",
+    "546a597410b049de82f7ce72fe7fd714"
+  ],
+  "ticks": 300,
+  "policy_budget_seconds": 180,
+  "results": [
+    {
+      "policy": "solutions/public/c15da13c3eaa.py",
+      "label": "c15da13c3eaa",
+      "score": 1008,
+      "seed_scores": [337, 336, 335],
+      "blocked_moves": 4,
+      "remaining_distance": 6566,
+      "policy_time_seconds": 11.921435
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-default-config-only.py",
+      "label": "c15da13c3eaa-default-config-only",
+      "score": 1000,
+      "seed_scores": [336, 333, 331],
+      "delta_vs_baseline": -8,
+      "blocked_moves": 3,
+      "remaining_distance": 6478,
+      "policy_time_seconds": 12.704597
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-no-flow-penalty.py",
+      "label": "c15da13c3eaa-no-flow-penalty",
+      "score": 992,
+      "seed_scores": [334, 330, 328],
+      "delta_vs_baseline": -16,
+      "blocked_moves": 13,
+      "remaining_distance": 6307,
+      "policy_time_seconds": 13.181257
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-no-jitter.py",
+      "label": "c15da13c3eaa-no-jitter",
+      "score": 1001,
+      "seed_scores": [334, 336, 331],
+      "delta_vs_baseline": -7,
+      "blocked_moves": 8,
+      "remaining_distance": 6439,
+      "policy_time_seconds": 12.188851
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-short-window-16.py",
+      "label": "c15da13c3eaa-short-window-16",
+      "score": 997,
+      "seed_scores": [334, 336, 327],
+      "delta_vs_baseline": -11,
+      "blocked_moves": 2,
+      "remaining_distance": 6206,
+      "policy_time_seconds": 9.775991
+    }
+  ]
+}

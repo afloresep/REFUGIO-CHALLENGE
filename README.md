@@ -21,6 +21,8 @@ It also contains the beginning of the analysis track:
 - `docs/evaluator-status.md` records the current simulator/evaluator gap.
 - `data/public-leaderboard-snapshot.json` preserves the public leaderboard facts
   used by the analysis.
+- `data/evaluation-results.json` records local official-seed scores for the
+  extracted baseline and first ablations.
 - `scripts/analyze-replays.mjs` summarizes vendored replay payloads.
 
 ## Run
@@ -54,11 +56,15 @@ Extract and inspect a public policy:
 npm run fetch:public-code -- c15da13c3eaa
 npm run analyze:policy -- solutions/public/c15da13c3eaa.py
 npm run make:ablations
+npm run eval:policy -- solutions/public/c15da13c3eaa.py --label c15da13c3eaa
 ```
 
 The leaderboard raw score is a three-seed aggregate. The bundled replay JSON for
 each job is one 300-tick payload, so its `total_deliveries` is expected to be
 roughly one third of the public raw score for high-scoring jobs.
+
+Official seed values are recorded in `data/official-seeds.json`. Evaluation
+outputs are written under `outputs/`, which is intentionally gitignored.
 
 ## Replay extraction
 

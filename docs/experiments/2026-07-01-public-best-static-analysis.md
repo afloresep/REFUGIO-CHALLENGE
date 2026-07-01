@@ -67,4 +67,4 @@ Next:
 
 Evaluator note:
 
-No local `warehouse` package, `warehouse_api`, `local_runner`, or `eval_runner` implementation is present in this repo. See `docs/evaluator-status.md`.
+`warehouse` and `warehouse_api` are available through the original starter kit in this Python environment. See `docs/evaluator-status.md`.
