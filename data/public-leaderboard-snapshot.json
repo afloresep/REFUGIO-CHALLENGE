@@ -1,0 +1,53 @@
+{
+  "captured_on": "2026-07-01",
+  "source_urls": {
+    "leaderboard": "https://refugio-hackathon-nine.vercel.app",
+    "instructions": "https://refugio-hackathon-nine.vercel.app/instructions",
+    "best_code": "https://refugio-hackathon-nine.vercel.app/code/c15da13c3eaa",
+    "event_recap": "https://blog.micr.dev/blog/my-first-hackathon-experience"
+  },
+  "notes": [
+    "Leaderboard points use progressive frontier scoring, not raw deliveries.",
+    "Public replay payloads bundled in this repo represent one 300-tick run; leaderboard deliveries are three-seed aggregate raw scores."
+  ],
+  "teams": [
+    { "rank": 1, "team": "Equipo 03", "points": 92172, "best_deliveries": 931, "submissions": 7 },
+    { "rank": 2, "team": "Equipo 10", "points": 91324, "best_deliveries": 1008, "submissions": 8 },
+    { "rank": 3, "team": "Equipo 02", "points": 89467, "best_deliveries": 917, "submissions": 7 },
+    { "rank": 4, "team": "Equipo 08", "points": 87165, "best_deliveries": 930, "submissions": 6 },
+    { "rank": 5, "team": "Equipo 04", "points": 43542, "best_deliveries": 907, "submissions": 5 },
+    { "rank": 6, "team": "Equipo 16", "points": 7137, "best_deliveries": 897, "submissions": 7 },
+    { "rank": 7, "team": "Equipo 09", "points": 1081, "best_deliveries": 898, "submissions": 6 },
+    { "rank": 8, "team": "Equipo 06", "points": 798, "best_deliveries": 901, "submissions": 5 },
+    { "rank": 9, "team": "Equipo 12", "points": 0, "best_deliveries": 930, "submissions": 5 },
+    { "rank": 10, "team": "Equipo 05", "points": 0, "best_deliveries": 925, "submissions": 6 },
+    { "rank": 11, "team": "Equipo 13", "points": 0, "best_deliveries": 918, "submissions": 5 },
+    { "rank": 12, "team": "Equipo 01", "points": 0, "best_deliveries": 908, "submissions": 3 },
+    { "rank": 13, "team": "Equipo 14", "points": 0, "best_deliveries": 897, "submissions": 4 },
+    { "rank": 14, "team": "Equipo 15", "points": 0, "best_deliveries": 896, "submissions": 4 },
+    { "rank": 15, "team": "Equipo 11", "points": 0, "best_deliveries": 895, "submissions": 5 },
+    { "rank": 16, "team": "Equipo 07", "points": 0, "best_deliveries": 895, "submissions": 3 }
+  ],
+  "top_jobs": [
+    { "rank": 1, "job_id": "1b294895f546", "team": "Equipo 02", "points": 88683, "deliveries": 882, "runtime_seconds": 15.73 },
+    { "rank": 2, "job_id": "e8ad7754c58a", "team": "Equipo 08", "points": 87165, "deliveries": 759, "runtime_seconds": 1.40 },
+    { "rank": 3, "job_id": "9c8ddcffc4f3", "team": "Equipo 03", "points": 85754, "deliveries": 610, "runtime_seconds": 1.41 },
+    { "rank": 4, "job_id": "c15da13c3eaa", "team": "Equipo 10", "points": 66990, "deliveries": 1008, "runtime_seconds": 19.31 },
+    { "rank": 5, "job_id": "15c4cc5a483b", "team": "Equipo 04", "points": 36315, "deliveries": 369, "runtime_seconds": 57.10 },
+    { "rank": 6, "job_id": "a99d84c43de0", "team": "Equipo 10", "points": 11431, "deliveries": 923, "runtime_seconds": 32.99 },
+    { "rank": 7, "job_id": "ce08283218fa", "team": "Equipo 10", "points": 7938, "deliveries": 397, "runtime_seconds": 21.68 },
+    { "rank": 8, "job_id": "7a4738c9956c", "team": "Equipo 04", "points": 7227, "deliveries": 907, "runtime_seconds": 21.93 },
+    { "rank": 9, "job_id": "ba833bb4d9ea", "team": "Equipo 16", "points": 5544, "deliveries": 895, "runtime_seconds": 16.54 },
+    { "rank": 10, "job_id": "c31ff1c81105", "team": "Equipo 10", "points": 4965, "deliveries": 930, "runtime_seconds": 17.89 },
+    { "rank": 11, "job_id": "7dd5b6c2a2bf", "team": "Equipo 03", "points": 3146, "deliveries": 888, "runtime_seconds": 16.88 },
+    { "rank": 12, "job_id": "7b2dfd229091", "team": "Equipo 03", "points": 1617, "deliveries": 909, "runtime_seconds": 14.92 },
+    { "rank": 13, "job_id": "96f62c7fdaa8", "team": "Equipo 16", "points": 1593, "deliveries": 897, "runtime_seconds": 11.46 },
+    { "rank": 14, "job_id": "3905ff4f9ead", "team": "Equipo 03", "points": 831, "deliveries": 931, "runtime_seconds": 11.96 },
+    { "rank": 15, "job_id": "a591827df228", "team": "Equipo 03", "points": 824, "deliveries": 924, "runtime_seconds": 16.28 },
+    { "rank": 16, "job_id": "d6ef1065be31", "team": "Equipo 06", "points": 798, "deliveries": 898, "runtime_seconds": 10.79 },
+    { "rank": 17, "job_id": "f692704ea634", "team": "Equipo 02", "points": 784, "deliveries": 884, "runtime_seconds": 16.56 },
+    { "rank": 18, "job_id": "516d288495df", "team": "Equipo 09", "points": 783, "deliveries": 883, "runtime_seconds": 16.56 },
+    { "rank": 19, "job_id": "8cb6baa8def4", "team": "Equipo 09", "points": 298, "deliveries": 398, "runtime_seconds": 29.10 },
+    { "rank": 20, "job_id": "9b2617f16f38", "team": "Equipo 12", "points": 0, "deliveries": 930, "runtime_seconds": 17.81 }
+  ]
+}
