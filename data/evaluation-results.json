@@ -1,5 +1,5 @@
 {
-  "captured_on": "2026-07-01",
+  "captured_on": "2026-07-02",
   "evaluator": "python3 -m warehouse.eval_runner",
   "seeds": [
     "bff0fb14575b4676b1f0f01bfc7b0126",
@@ -17,6 +17,16 @@
       "blocked_moves": 4,
       "remaining_distance": 6566,
       "policy_time_seconds": 11.921435
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024.py",
+      "label": "2026-07-02-solver-1024",
+      "score": 1024,
+      "seed_scores": [343, 342, 339],
+      "delta_vs_baseline": 16,
+      "blocked_moves": 12,
+      "remaining_distance": 6180,
+      "policy_time_seconds": 46.266884
     },
     {
       "policy": "solutions/ours/c15da13c3eaa-default-config-only.py",

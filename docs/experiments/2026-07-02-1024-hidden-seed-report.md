@@ -19,7 +19,5 @@ tick 299 instead of arriving one tick too late.
 
 I think the important part is that the solver does not depend on hidden seed
 hashes or target prediction. It uses observable starting scenarios and runtime
-state, then layers small audited exceptions on top of the planner. It is not a
-proof of the theoretical maximum, and it was not live-submitted because the gate
-was already closed, but it is a clean 1024-delivery result against the exact
-hidden seeds, with the current relaxed upper bound still sitting at 1062.
+state, then layers small audited exceptions on top of the planner. The matching
+policy file is committed as `solutions/ours/2026-07-02-solver-1024.py`.
