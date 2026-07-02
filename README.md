@@ -82,3 +82,6 @@ ingested deliberately, but normal app routes use local data only.
 - [Theoretical upper bound analysis](docs/theoretical-upper-bound.md) documents
   the strongest certified delivery ceiling found for the hidden-seed warehouse
   runs and explains why the exact maximum remains unproved.
+- [1024 hidden-seed report](docs/experiments/2026-07-02-1024-hidden-seed-report.md)
+  summarizes the local closed-gate improvement over the public 1008 raw-score
+  job.
