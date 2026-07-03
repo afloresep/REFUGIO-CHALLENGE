@@ -752,6 +752,38 @@
    "remaining_distance": 12235,
    "policy_time_seconds": 0.01986,
    "notes": "min_mask irreducible-core search converts 546a rid 20 (core 32,75,78); 1036 = 349+344+343"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1038)",
+   "label": "2026-07-03-replay-solver-1038",
+   "score": 1038,
+   "seed_scores": [
+    349,
+    346,
+    343
+   ],
+   "delta_vs_baseline": 30,
+   "delta_vs_1024": 14,
+   "blocked_moves": 0,
+   "remaining_distance": 12282,
+   "policy_time_seconds": 0.020112,
+   "notes": "min_mask converts dfbf rid 65 (core 58,66,72,75) and rid 57 (core 54,60); 1038 = 349+346+343"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1039)",
+   "label": "2026-07-03-replay-solver-1039",
+   "score": 1039,
+   "seed_scores": [
+    350,
+    346,
+    343
+   ],
+   "delta_vs_baseline": 31,
+   "delta_vs_1024": 15,
+   "blocked_moves": 0,
+   "remaining_distance": 12295,
+   "policy_time_seconds": 0.020059,
+   "notes": "min_mask converts bff0 rid 65 (core 36,68,70); 1039 = 350+346+343"
   }
  ]
 }
