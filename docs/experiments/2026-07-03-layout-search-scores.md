@@ -172,7 +172,13 @@ randomized single-robot priority-boost perturbations (ticks 40-240, all/carry,
 ~80 per seed) against strict per-seed thresholds: zero improvements, with the
 observed maxima landing exactly on the incumbent scores (343 / 342 / 339).
 
-Total evaluator runs across all passes: ~750. Every perturbation family's
+A post-acceptance probe also closed the last novel cheap dimension:
+time-varying planner schedules (flow bias switched off at tick 200/230/260,
+WINDOW shrunk to 20/14 at tick 240/260, stayer horizon shrunk to 8 at tick
+260) - 18 single-seed trials, zero improvements, six exact ties with the
+incumbents. The late-stayer schedule ties all three seeds simultaneously.
+
+Total evaluator runs across all passes: ~770. Every perturbation family's
 maximum equals the incumbent exactly - the 1024 solution is converged against
 its entire accessible neighborhood.
 
