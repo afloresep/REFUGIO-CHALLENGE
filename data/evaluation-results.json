@@ -587,6 +587,107 @@
    "remaining_distance": 6280,
    "policy_time_seconds": 0.019229,
    "notes": "replay-matrix policy: starts from 1025 and left-compresses robot 17 on seed bff0 (3 -> 4 deliveries); verified by official-seed evaluator"
+  },
+  {
+   "policy": "solutions/public/9b2617f16f38.py",
+   "label": "9b2617f16f38",
+   "score": 930,
+   "seed_scores": [
+    306,
+    318,
+    306
+   ],
+   "delta_vs_baseline": -78,
+   "delta_vs_1024": -94,
+   "delta_vs_1026": -96,
+   "blocked_moves": 16,
+   "remaining_distance": 7350,
+   "policy_time_seconds": 11.439706,
+   "notes": "public 930 job from Team 12; legal shared-brain rolling A* family, evaluated locally as a negative candidate for the 1040 search"
+  },
+  {
+   "policy": "solutions/public/d9d5e50cbd41.py",
+   "label": "d9d5e50cbd41",
+   "score": 930,
+   "seed_scores": [
+    306,
+    318,
+    306
+   ],
+   "delta_vs_baseline": -78,
+   "delta_vs_1024": -94,
+   "delta_vs_1026": -96,
+   "blocked_moves": 16,
+   "remaining_distance": 7350,
+   "policy_time_seconds": 11.436983,
+   "notes": "public 930 job from Team 08; same local seed scores as 9b2617f16f38, evaluated as a negative candidate for the 1040 search"
+  },
+  {
+   "policy": "solutions/public/9f6e36d64061.py",
+   "label": "9f6e36d64061",
+   "score": 925,
+   "seed_scores": [
+    307,
+    315,
+    303
+   ],
+   "delta_vs_baseline": -83,
+   "delta_vs_1024": -99,
+   "delta_vs_1026": -101,
+   "blocked_moves": 1,
+   "remaining_distance": 7138,
+   "policy_time_seconds": 7.643335,
+   "notes": "public 925 job from Team 05; contains a legal replay fast path for one seed but remains below the 1026 floor"
+  },
+  {
+   "policy": "solutions/public/3905ff4f9ead.py",
+   "label": "3905ff4f9ead",
+   "score": 931,
+   "seed_scores": [
+    307,
+    318,
+    306
+   ],
+   "delta_vs_baseline": -77,
+   "delta_vs_1024": -93,
+   "delta_vs_1026": -95,
+   "blocked_moves": 10,
+   "remaining_distance": 7526,
+   "policy_time_seconds": 7.338387,
+   "notes": "public 931 job from Team 03; contains a legal seed replay fast path but remains below the 1026 floor"
+  },
+  {
+   "policy": "solutions/public/c31ff1c81105.py",
+   "label": "c31ff1c81105",
+   "score": 930,
+   "seed_scores": [
+    306,
+    318,
+    306
+   ],
+   "delta_vs_baseline": -78,
+   "delta_vs_1024": -94,
+   "delta_vs_1026": -96,
+   "blocked_moves": 16,
+   "remaining_distance": 7350,
+   "policy_time_seconds": 11.083467,
+   "notes": "public 930 job from Team 10; same source hash as d9d5e50cbd41, evaluated as a negative candidate for the 1040 search"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1029)",
+   "label": "2026-07-03-replay-solver-1029",
+   "score": 1029,
+   "seed_scores": [
+    347,
+    342,
+    340
+   ],
+   "delta_vs_baseline": 21,
+   "delta_vs_1024": 5,
+   "blocked_moves": 0,
+   "remaining_distance": 12287,
+   "policy_time_seconds": 0.021037,
+   "notes": "replay-matrix policy: dead-tail stripping (88-94 robots/seed) + lock-aware day-compression sweep converts bff0 rid 7 and 92, 546a rid 82; beats 1026 by 3"
   }
  ]
 }
