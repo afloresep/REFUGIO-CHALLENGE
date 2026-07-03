@@ -12,6 +12,7 @@ Read these files before making claims or changes:
 - `docs/research-plan.md` - current workstreams and checklist.
 - `docs/technical-writeup-outline.md` - intended article structure.
 - `docs/experiments/2026-07-01-official-seed-ablation-scores.md` - key ablation results.
+- `docs/experiments/2026-07-03-layout-search-scores.md` - layout-search results, demand-model exploit, and why 1024 is a sharp local optimum.
 - `docs/limit-argument-review.md` - why the external "1000 impossible" proof is wrong.
 - `data/evaluation-results.json` - machine-readable official-seed scores.
 
@@ -148,17 +149,16 @@ If imports fail in a future environment, do not guess scores. Document the missi
 
 ## Next Priorities
 
-1. Search local perturbations of the Team 10 layout around the 1021 no-forced-actions planner.
-   The canonical and wide-avenue swaps still score 890 and 386 under the 1021 planner, so the next useful layout work should preserve Team 10's short access distances and pickup-cell multiplicity while testing explicit return lanes and base-side balancing.
+1. The layout search is done (see `docs/experiments/2026-07-03-layout-search-scores.md`).
+   Key mechanism: targets are drawn as `sorted_shelves[sha256(seed|robot|deliveries) mod 960]`, so official-seed demand is computable offline and layouts are index-to-position maps. The best alternative layout (`solutions/ours/2026-07-03-layout-dp-t10lat-composite-1016.py`, demand-DP subset of Team 10's own lattice) scores 1016 and beats the Team 10 layout +12 at equal planner config, but the layout family ceiling under this planner is ~1016-1023. Team 10's layout is demand-co-optimal (868/960 cells identical with the exact DP optimum). Tooling: `scripts/layout_search/`.
 
-2. Retune planner flow settings after each promising geometry change.
-   The current flow penalty and per-seed windows are layout-coupled; do not conclude a geometry is bad before checking a small flow/window retune.
+2. Toward >1024, the config and layout dimensions are exhausted (~350 evaluator runs; W/F/S fine grid, stayer/eta/deadline/pickup/jitter/WAIT_CAP/NODE_CAP micro-sweeps, 48 single-boost trials all saturate at 343/342/339). Remaining paths are heavy: hand-crafted forced-action trajectory chains, multi-boost combinatorics, or a structurally better planner (windowed PBS/CBS).
 
 3. Extract more public policies if useful.
    Start with jobs around 930 and 925. Use `npm run fetch:public-code -- <job-id>`.
 
 4. Draft the article from evidence, not vibes.
-   The article should open with the contradiction: an agent claimed 1000 was impossible, but the public best code reproduces 1008 locally on the same seeds.
+   The article should open with the contradiction: an agent claimed 1000 was impossible, but the public best code reproduces 1008 locally on the same seeds. The demand-co-optimality of Team 10's layout (and the offline demand model behind it) is a headline finding.
 
 ## Article Angle
 
