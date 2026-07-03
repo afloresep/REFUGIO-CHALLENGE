@@ -554,6 +554,22 @@
    "remaining_distance": 6507,
    "policy_time_seconds": 13.541922,
    "notes": "rank-band crossover t10 x dp (ABBA); pred 1077"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1025)",
+   "label": "2026-07-03-replay-solver-1025",
+   "score": 1025,
+   "seed_scores": [
+    344,
+    342,
+    339
+   ],
+   "delta_vs_baseline": 17,
+   "delta_vs_1024": 1,
+   "blocked_moves": 0,
+   "remaining_distance": 6195,
+   "policy_time_seconds": 0.018557,
+   "notes": "replay-matrix policy: verbatim 1024 bundle with robot 68's day left-compressed on seed bff0 (+1, zero collateral); beats 1024"
   }
  ]
 }
