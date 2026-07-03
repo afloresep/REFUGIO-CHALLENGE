@@ -78,7 +78,26 @@ function noStayerHorizonTuning(source) {
   );
 }
 
+function cleanPlannerFloor(source) {
+  let next = replaceOnce(
+    source,
+    /    forced=FORCED_ACTIONS\.get\(\(ACTIVE_SCENARIO,rid,brain\.cur_tick,pos,carrying\)\)/,
+    "    forced=None",
+  );
+  next = replaceBlock(next, "ROBOT_BOOSTS", "ROBOT_BOOSTS = {}");
+  next = replaceBlock(next, "PICKUP_SIDE_CONFIGS", "PICKUP_SIDE_CONFIGS = {}");
+  next = replaceBlock(next, "PICKUP_SIDE_FINISHABLE_CONFIGS", "PICKUP_SIDE_FINISHABLE_CONFIGS = {}");
+  next = replaceBlock(next, "STAYER_CONFIGS", "STAYER_CONFIGS = {}");
+
+  return withHeader(
+    next,
+    "clean-planner-floor",
+    "Measure the 1024 planner floor after removing forced actions, robot boosts, pickup-side retargeting, and stayer-horizon tuning together.",
+  );
+}
+
 const variants = [
+  ["2026-07-02-solver-1024-clean-planner-floor.py", cleanPlannerFloor],
   ["2026-07-02-solver-1024-no-forced-actions.py", noForcedActions],
   ["2026-07-02-solver-1024-no-pickup-side-retarget.py", noPickupSideRetarget],
   ["2026-07-02-solver-1024-no-robot-boosts.py", noRobotBoosts],

@@ -97,5 +97,6 @@ When the simulator is available, every numeric claim in the writeup should point
 - [x] Add layout ablations.
 - [x] Add layout feature analysis script.
 - [x] Add first 1024 mechanism ablations.
-- [ ] Add combined 1024 mechanism ablations.
+- [x] Add combined 1024 mechanism ablations.
+- [ ] Isolate retuned 1024 seed configs from public 1008 settings.
 - [ ] Search layout variants around the 1021 no-forced-actions planner.

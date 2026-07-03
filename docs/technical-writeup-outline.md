@@ -121,3 +121,4 @@ The lesson is not that LLMs are useless for optimization. The lesson is that the
 | Team 10 layout has stronger shelf access than simple alternatives | layout feature analysis | done |
 | local closed-gate solver reaches 1024 | official-seed evaluator run | done |
 | 1024 mostly comes from retuned planner layer, not forced actions alone | official-seed ablation | done |
+| removing all 1024 helper mechanisms leaves a 1009 clean planner floor | official-seed ablation | done |

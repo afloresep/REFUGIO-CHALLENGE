@@ -30,6 +30,17 @@
       "policy_time_seconds": 13.745917
     },
     {
+      "policy": "solutions/ours/2026-07-02-solver-1024-clean-planner-floor.py",
+      "label": "2026-07-02-solver-1024-clean-planner-floor",
+      "score": 1009,
+      "seed_scores": [337, 335, 337],
+      "delta_vs_baseline": 1,
+      "delta_vs_1024": -15,
+      "blocked_moves": 19,
+      "remaining_distance": 6816,
+      "policy_time_seconds": 12.422189
+    },
+    {
       "policy": "solutions/ours/2026-07-02-solver-1024-no-forced-actions.py",
       "label": "2026-07-02-solver-1024-no-forced-actions",
       "score": 1021,

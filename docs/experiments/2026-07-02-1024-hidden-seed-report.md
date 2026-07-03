@@ -22,9 +22,10 @@ not the main lift by themselves. Disabling forced actions still scores 1021
 across the same official seeds. The biggest single tested mechanism was
 scenario-specific stayer-reservation horizon tuning: removing it drops to 1011.
 Late pickup-side retargeting drops to 1018, and late robot priority boosts drop
-to 1020. So the right interpretation is that the 1024 policy has a stronger
-retuned planner core, with hand-audited suffix fixes adding the final few
-deliveries and tie-breaker distance.
+to 1020. Disabling all four helper mechanisms together leaves a 1009 clean
+planner floor. So the right interpretation is that the retuned planner core
+barely clears the public 1008 result, while the helper mechanisms account for
+almost all of the final 1024 score.
 
 I think the important part is that the solver does not depend on hidden seed
 hashes or target prediction. It uses observable starting scenarios and runtime

@@ -46,6 +46,7 @@ Important measured ablations:
 | Policy | Score | Seed scores | Main lesson |
 | --- | ---: | --- | --- |
 | 1024 solver | 1024 | 343, 342, 339 | current local closed-gate best |
+| 1024 clean planner floor | 1009 | 337, 335, 337 | retuned config alone barely clears public 1008 |
 | 1024 no forced actions | 1021 | 342, 340, 339 | hard suffix overrides are useful but not the main lift |
 | 1024 no stayer-horizon tuning | 1011 | 336, 336, 339 | shorter stayer reservations are a major 1024 mechanism |
 | 1024 no pickup-side retarget | 1018 | 337, 342, 339 | late pickup-side choice adds deliveries |
@@ -144,8 +145,8 @@ If imports fail in a future environment, do not guess scores. Document the missi
 
 ## Next Priorities
 
-1. Add combined 1024 mechanism ablations.
-   Disable forced actions, robot boosts, pickup-side retargeting, and stayer-horizon tuning in controlled combinations. Use this to separate the clean planner improvement from suffix hacks.
+1. Isolate retuned `SEED_CONFIGS` versus the public 1008 settings.
+   The clean planner floor is 1009, so the next question is whether that +1 comes only from seed config retuning and deterministic jitter removal.
 
 2. Search layout variants around the 1021 no-forced-actions planner.
    Preserve short access distances while testing explicit return lanes and base-side balancing. Retune planner flow settings after geometry changes.
