@@ -31,11 +31,12 @@ from layout_search.pair_repair import masked
 MAX_SHORTFALL = 10
 
 
-def shortfalls(data, pos, best):
+def shortfalls(data, pos, best, max_shortfall=None):
+    cap = max_shortfall if max_shortfall is not None else MAX_SHORTFALL
     out = []
     for rid in range(L.ROBOT_COUNT):
         t = probe(data, pos, rid, best[rid] + 1)
-        if t is not None and 299 < t <= 299 + MAX_SHORTFALL:
+        if t is not None and 299 < t <= 299 + cap:
             out.append((t - 299, rid))
     out.sort()
     return out
@@ -49,7 +50,7 @@ def floor_of(data, pos, g, trips):
     return probe(d_all, pos_all, g, trips)
 
 
-def cycle(data, out: Path, exclude: set[int]):
+def cycle(data, out: Path, exclude: set[int], max_shortfall=None):
     ctx = Ctx(data)
     best = ME.deliveries(ME.simulate(data))
     total = sum(best)
@@ -72,7 +73,7 @@ def cycle(data, out: Path, exclude: set[int]):
             out.write_text(json.dumps(data))
 
     # 2-4. probe -> floors -> min-mask
-    near = shortfalls(data, pos, best)
+    near = shortfalls(data, pos, best, max_shortfall)
     print(f"  near-misses: {near}", flush=True)
     for shortfall, g in near:
         if g in exclude:
@@ -112,6 +113,7 @@ def main():
     ap.add_argument("out")
     ap.add_argument("--exclude", default="")
     ap.add_argument("--cycles", type=int, default=4)
+    ap.add_argument("--max-shortfall", type=int, default=None)
     args = ap.parse_args()
     PM.FULL = True
     exclude = {int(x) for x in args.exclude.split(",") if x}
@@ -119,7 +121,7 @@ def main():
     print(f"start {data['seed'][:8]}: {sum(ME.deliveries(ME.simulate(data)))}", flush=True)
     for c in range(args.cycles):
         print(f"cycle {c}", flush=True)
-        data, total, improved = cycle(data, Path(args.out), exclude)
+        data, total, improved = cycle(data, Path(args.out), exclude, args.max_shortfall)
         if not improved:
             break
     print(f"final {data['seed'][:8]}: {total}", flush=True)

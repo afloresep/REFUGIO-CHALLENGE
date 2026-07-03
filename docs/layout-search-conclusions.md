@@ -10,7 +10,7 @@ Tooling: `scripts/layout_search/`
 Goal: find a policy/layout that beats the local best of 1024 deliveries
 (343, 342, 339) on the three official seeds.
 
-**Outcome (final): 1024 WAS beaten - current best 1041 (350, 346, 345) via the replay-matrix reframe and its edit stack (see below and the experiment log). The intermediate conclusion that 1024 was unbeatable held only for reactive-planner policies.**
+**Outcome (final): 1024 WAS beaten - current best 1042 (350, 346, 346) via the replay-matrix reframe and its edit stack (see below and the experiment log). The intermediate conclusion that 1024 was unbeatable held only for reactive-planner policies.**
 
 Original intermediate outcome: After ~350 evaluator runs across every
 systematically searchable dimension, 1024 stands as a sharp local optimum.
@@ -192,8 +192,8 @@ repair, greedy multi-masking, suffix-rebuild victim cascades, pair/triple
 mask lookahead, and minimal-mask core search over ideal-corridor
 interactors and lock owners. Every accepted edit is validated by the exact
 simulator; every milestone was verified on the official evaluator:
-1029 -> 1030 -> 1033 -> 1035 -> 1036 -> 1038 -> 1039 -> **1041
-(350 + 346 + 345, `solutions/ours/2026-07-03-replay-solver-1041.py`)**.
+1029 -> 1030 -> 1033 -> 1035 -> 1036 -> 1038 -> 1039 -> 1041 -> **1042
+(350 + 346 + 346, `solutions/ours/2026-07-03-replay-solver-1042.py`)**.
 Free-space floors (plan with all other robots masked) prove which robots are
 physically convertible; the survivors sit behind multi-robot knots of 2-6
 blockers, each unwound by rebuilding the blockers' days around the gain

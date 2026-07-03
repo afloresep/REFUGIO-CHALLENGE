@@ -319,11 +319,26 @@ Milestones verified on the official evaluator:
 | replay-solver-1036 | 1036 | 349/344/343 | + minimal-mask cores |
 | replay-solver-1038/1039 | 1039 | 350/346/343 | + more cores (2-4 robots) |
 | replay-solver-1041 | 1041 | 350/346/345 | + iterate loop (6-robot core) |
+| **replay-solver-1042** | **1042** | 350/346/346 | + lock-owner candidates (7-robot core) |
 
 Free-space floors (all traffic masked) bound the remaining single-robot
 headroom: several robots per seed have floors <= 299 but sit behind
 multi-robot knots; robots with floors > 299 (e.g. dfbf rid 26 at 303) are
 physically unconvertible in the current bundle shape.
+
+### Where the machinery saturates (state at 1042)
+
+Wide-shortfall passes (up to +25 ticks, cores up to 12 robots) ran dry on
+all three seeds. The surviving floor-viable candidates all fail the same
+way: some blocker in every irreducible core is itself unrebuildable, either
+because its day cannot be replanned at all in the current field, or because
+the gain robot and the blocker demand the same shelf at overlapping times
+in every schedule (a demand collision, e.g. bff0 rid 47 vs rid 87 on shelf
+(33,30), dfbf rid 68 vs rid 25's trip-1 shelf). Unwinding those would
+require replanning the blocker's blockers recursively - multi-level joint
+replanning that this per-robot machinery does not attempt. That, or a
+fundamentally different bundle shape (different equilibrium from tick 0),
+is the remaining route toward 1050.
 
 ## Verdict (superseded twice)
 
