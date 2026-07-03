@@ -800,6 +800,22 @@
    "remaining_distance": 12306,
    "policy_time_seconds": 0.019604,
    "notes": "iterate.py full loop converts 546a rid 66 (core 68,74) and rid 13 (six-robot core 4,10,28,29,36,77); 1041 = 350+346+345, clears the 1040 tier"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1042)",
+   "label": "2026-07-03-replay-solver-1042",
+   "score": 1042,
+   "seed_scores": [
+    350,
+    346,
+    346
+   ],
+   "delta_vs_baseline": 34,
+   "delta_vs_1024": 18,
+   "blocked_moves": 0,
+   "remaining_distance": 12297,
+   "policy_time_seconds": 0.019576,
+   "notes": "ideal-corridor + lock-owner candidates crack 546a rid 42 (seven-robot core 17,46,47,70,81,84,91); 1042 = 350+346+346"
   }
  ]
 }
