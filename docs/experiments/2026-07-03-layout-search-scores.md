@@ -230,19 +230,28 @@ Findings inside the frozen bundle:
   **seed bff0 robot 68: 2 -> 3 deliveries, zero collateral** (its extra trip
   completes at frame 293). Four others stole shelf locks from frozen robots
   and were rejected by simulation.
+- Re-running the same sweep from the 1025 matrix found two more seed-bff0
+  single-robot conversions over that state: robot 17 (3 -> 4 deliveries,
+  final extra drop at frame 279) and robot 37 (4 -> 5 deliveries, final extra
+  drop at frame 297). They do not compose: either single edit scores 345 on
+  bff0, but applying both still scores 345 because the second edit changes the
+  shelf-lock timing.
 
-**Final confirmed result: `solutions/ours/2026-07-03-replay-solver-1025.py`
-scores 1025 = 344 + 342 + 339 on the official seeds, beating 1024.**
+**Final confirmed result: `solutions/ours/2026-07-03-replay-solver-1026.py`
+scores 1026 = 345 + 342 + 339 on the official seeds, beating 1025.**
 
-Remaining headroom for the article: lock-aware pickup floors for the four
-rejected conversions, and compression sweeps over all 96 robots per seed.
+Remaining headroom for the article: lock-aware pickup floors for rejected
+conversions and multi-robot replay edits that preserve shelf-lock ordering.
 
-## Verdict (superseded)
+## Verdict (superseded twice)
 
-No candidate beats 1024. Final standings:
+The live-planner verdict was superseded by replay-matrix policies. Current
+standings:
 
 | Policy | Score | Seed scores |
 | --- | ---: | --- |
+| 2026-07-03-replay-solver-1026 | **1026** | 345, 342, 339 |
+| 2026-07-03-replay-solver-1025 | 1025 | 344, 342, 339 |
 | 2026-07-02-solver-1024 (Team 10 layout, full stack) | **1024** | 343, 342, 339 |
 | no-forced-actions (Team 10 layout) | 1021 | 342, 340, 339 |
 | **dp-t10lat composite (best new layout, this session)** | **1016** | 345, 332, 339 |

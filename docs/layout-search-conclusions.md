@@ -10,7 +10,7 @@ Tooling: `scripts/layout_search/`
 Goal: find a policy/layout that beats the local best of 1024 deliveries
 (343, 342, 339) on the three official seeds.
 
-**Outcome (final): 1024 WAS beaten - 1025 (344, 342, 339) via the replay-matrix reframe (see below). The intermediate conclusion that 1024 was unbeatable held only for reactive-planner policies.**
+**Outcome (final): 1024 WAS beaten - 1026 (345, 342, 339) via the replay-matrix reframe (see below). The intermediate conclusion that 1024 was unbeatable held only for reactive-planner policies.**
 
 Original intermediate outcome: After ~350 evaluator runs across every
 systematically searchable dimension, 1024 stands as a sharp local optimum.
@@ -179,9 +179,13 @@ A pure replay policy (full per-seed action matrices, seed fingerprinted at
 tick 0) eliminates reactions entirely: the replayed 1024 bundle reproduces
 exactly, edits have no cascade surface, and the evaluator's own simulator
 validates each edit. A day-compression sweep found robot 68 on seed bff0
-convertible with zero collateral: **final score 1025 = 344 + 342 + 339**
-(`solutions/ours/2026-07-03-replay-solver-1025.py`). The barrier term in the
-closure inequality was a property of the policy class, not the problem.
+convertible with zero collateral (1025 = 344 + 342 + 339); re-sweeping from
+that state converted robot 17 as well (3 -> 4 deliveries):
+**final score 1026 = 345 + 342 + 339**
+(`solutions/ours/2026-07-03-replay-solver-1026.py`). A third conversion
+(robot 37) works alone but does not compose with robot 17 - each edit shifts
+shelf-lock timing the other depends on. The barrier term in the closure
+inequality was a property of the policy class, not the problem.
 
 ## Remaining paths toward >1024 (superseded - goal achieved)
 

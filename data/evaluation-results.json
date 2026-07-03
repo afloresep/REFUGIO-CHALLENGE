@@ -570,6 +570,23 @@
    "remaining_distance": 6195,
    "policy_time_seconds": 0.018557,
    "notes": "replay-matrix policy: verbatim 1024 bundle with robot 68's day left-compressed on seed bff0 (+1, zero collateral); beats 1024"
+  },
+  {
+   "policy": "solutions/ours/2026-07-03-replay-solver-1026.py",
+   "label": "2026-07-03-replay-solver-1026",
+   "score": 1026,
+   "seed_scores": [
+    345,
+    342,
+    339
+   ],
+   "delta_vs_baseline": 18,
+   "delta_vs_1024": 2,
+   "delta_vs_1025": 1,
+   "blocked_moves": 13,
+   "remaining_distance": 6280,
+   "policy_time_seconds": 0.019229,
+   "notes": "replay-matrix policy: starts from 1025 and left-compresses robot 17 on seed bff0 (3 -> 4 deliveries); verified by official-seed evaluator"
   }
  ]
 }
