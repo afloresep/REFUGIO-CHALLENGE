@@ -178,7 +178,13 @@ WINDOW shrunk to 20/14 at tick 240/260, stayer horizon shrunk to 8 at tick
 260) - 18 single-seed trials, zero improvements, six exact ties with the
 incumbents. The late-stayer schedule ties all three seeds simultaneously.
 
-Total evaluator runs across all passes: ~770. Every perturbation family's
+A last micro-cell wave closed the remaining untested cells of validated
+mechanisms: bff0 ETA shifts and first-ever DEADLINE introduction (all <= 343),
+finishable-flag toggles on bff0/dfbf (ties), dfbf ETA/deadline shifts
+(<= 342), and +-10 tick shifts of all 11 incumbent hand-tuned boosts
+(9 exact ties on dfbf, 9 on 546a, rest worse) - 38 trials, zero improvements.
+
+Total evaluator runs across all passes: ~810. Every perturbation family's
 maximum equals the incumbent exactly - the 1024 solution is converged against
 its entire accessible neighborhood.
 
