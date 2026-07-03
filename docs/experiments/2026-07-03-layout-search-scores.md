@@ -184,7 +184,12 @@ finishable-flag toggles on bff0/dfbf (ties), dfbf ETA/deadline shifts
 (<= 342), and +-10 tick shifts of all 11 incumbent hand-tuned boosts
 (9 exact ties on dfbf, 9 on 546a, rest worse) - 38 trials, zero improvements.
 
-Total evaluator runs across all passes: ~810. Every perturbation family's
+The priority-regime family is also closed: ETA-priority applied from tick
+0/60/120 (vs the incumbent late-only switch) and farthest-first orderings
+(carriers only, or all movers) lose 5-7 deliveries per seed (best 337/338/335).
+Closest-first with late-only ETA is structurally right, not just tuned.
+
+Total evaluator runs across all passes: ~825. Every perturbation family's
 maximum equals the incumbent exactly - the 1024 solution is converged against
 its entire accessible neighborhood.
 
