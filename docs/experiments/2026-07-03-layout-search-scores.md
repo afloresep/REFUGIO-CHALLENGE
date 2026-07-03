@@ -157,6 +157,18 @@ Findings on seed bff0 (threshold 344):
 - Jitter draws are full-desync lotteries over the same structure: 16 draws per
   seed scored 337-343 / <=338 / <=337, never beating the choreographed bundle.
 
+## Exhaustive closure of the config lattice (second pass)
+
+Remaining integer-lattice gaps, all closed with no seed beating its incumbent
+(342 / 340-342 / 339 thresholds): FLOW {0.08, 0.10} x STAYER {15, 21, 34};
+STAYER {19, 20, 22, 23} x FLOW {0.06, 0.09}; bff0 pickup ticks
+{170, 180, 190, 210, 220f} (all <= 340); dfbf/546a pickup and scalar sweeps
+(earlier waves). Jitter re-draw "fresh bundles" turned out to be byte-identical
+to the incumbents (identical waste tables) - genuinely different trajectory
+bundles all score 2-6 below the choreographed incumbents.
+
+Total evaluator runs across both passes: ~500.
+
 ## Verdict
 
 No candidate beats 1024. Final standings:
