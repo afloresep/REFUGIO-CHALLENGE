@@ -189,7 +189,13 @@ The priority-regime family is also closed: ETA-priority applied from tick
 (carriers only, or all movers) lose 5-7 deliveries per seed (best 337/338/335).
 Closest-first with late-only ETA is structurally right, not just tuned.
 
-Total evaluator runs across all passes: ~825. Every perturbation family's
+Hardcoded planner internals are also closed: A* wait-cost epsilon
+{1.001, 1.05, 1.25} (loses 4-9), per-robot-state reservation windows
+(carrier/seeker splits 40/28, 28/40, 34/24; loses 4-12), and flipping the
+final-move resolution order (ties all three seeds exactly - never binds).
+21 trials, zero improvements.
+
+Total evaluator runs across all passes: ~846. Every perturbation family's
 maximum equals the incumbent exactly - the 1024 solution is converged against
 its entire accessible neighborhood.
 
