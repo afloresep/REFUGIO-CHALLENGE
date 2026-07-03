@@ -784,6 +784,22 @@
    "remaining_distance": 12295,
    "policy_time_seconds": 0.020059,
    "notes": "min_mask converts bff0 rid 65 (core 36,68,70); 1039 = 350+346+343"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1041)",
+   "label": "2026-07-03-replay-solver-1041",
+   "score": 1041,
+   "seed_scores": [
+    350,
+    346,
+    345
+   ],
+   "delta_vs_baseline": 33,
+   "delta_vs_1024": 17,
+   "blocked_moves": 0,
+   "remaining_distance": 12306,
+   "policy_time_seconds": 0.019604,
+   "notes": "iterate.py full loop converts 546a rid 66 (core 68,74) and rid 13 (six-robot core 4,10,28,29,36,77); 1041 = 350+346+345, clears the 1040 tier"
   }
  ]
 }
