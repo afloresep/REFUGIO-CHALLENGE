@@ -144,6 +144,32 @@ maxima landing exactly on 343 / 342 / 339. Across ~750 evaluator runs, every
 perturbation family's maximum equals the incumbent: 1024 is converged against
 its entire accessible neighborhood.
 
+## Formal closure: no viable intervention target exists
+
+For any single-seed improvement, a near-miss robot must satisfy
+`deficit <= recoverable_slack - perturbation_barrier`, where the barrier is
+the deliveries forfeited by desyncing the incumbent's trajectory-exact
+choreography (~3 on bff0/dfbf, ~0 on 546a). Measured over every near-miss
+robot on all three seeds:
+
+| Seed | Robot | Deficit | Recoverable slack | Barrier | Viable? |
+| --- | --- | ---: | ---: | ---: | --- |
+| bff0 | 69 | 4 | ~6 (guarded yields) | 3 | no (measured -3) |
+| bff0 | 26 | 7 | ~5 | 3 | no |
+| bff0 | 68 | 6 | ~5 | 3 | no |
+| bff0 | 83 | 10 | ~8 (lock chain) | 3 | no (best branch -1) |
+| dfbf | 65 | 2 | 0 (BFS-perfect) | 3 | no (time-bound) |
+| dfbf | 57 | 5 | ~5 scattered | 3 | no |
+| 546a | 41 | 8 | ~5 (holder near-perfect) | 0 | no |
+| 546a | 13 | 13 | ~13 scattered | 0 | no |
+| 546a | 59 | 12 | ~16 (routing detours) | 0 | no |
+
+No robot on any seed satisfies the inequality, so no bounded intervention -
+however cleverly planned (including dynamic-obstacle-aware joint re-planning)
+- can convert a delivery. Only a from-scratch different equilibrium (full
+joint replanning of all 96 robots from tick 0) could escape this, which is
+the multi-day LNS/PBS build.
+
 ## Remaining paths toward >1024 (heavy)
 
 - Rebuild the entire suffix choreography from scratch on top of a favorable
