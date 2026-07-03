@@ -41,6 +41,50 @@
       "policy_time_seconds": 12.422189
     },
     {
+      "policy": "solutions/ours/2026-07-02-solver-1024-clean-floor-no-late-priority.py",
+      "label": "2026-07-02-solver-1024-clean-floor-no-late-priority",
+      "score": 1007,
+      "seed_scores": [338, 334, 335],
+      "delta_vs_baseline": -1,
+      "delta_vs_1024": -17,
+      "blocked_moves": 5,
+      "remaining_distance": 6640,
+      "policy_time_seconds": 12.202027
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-clean-floor-public-configs.py",
+      "label": "2026-07-02-solver-1024-clean-floor-public-configs",
+      "score": 1005,
+      "seed_scores": [334, 337, 334],
+      "delta_vs_baseline": -3,
+      "delta_vs_1024": -19,
+      "blocked_moves": 6,
+      "remaining_distance": 6381,
+      "policy_time_seconds": 11.584987
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-clean-floor-public-jitter.py",
+      "label": "2026-07-02-solver-1024-clean-floor-public-jitter",
+      "score": 999,
+      "seed_scores": [333, 335, 331],
+      "delta_vs_baseline": -9,
+      "delta_vs_1024": -25,
+      "blocked_moves": 2,
+      "remaining_distance": 6292,
+      "policy_time_seconds": 11.867139
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-clean-floor-public-seed-configs.py",
+      "label": "2026-07-02-solver-1024-clean-floor-public-seed-configs",
+      "score": 1003,
+      "seed_scores": [335, 337, 331],
+      "delta_vs_baseline": -5,
+      "delta_vs_1024": -21,
+      "blocked_moves": 6,
+      "remaining_distance": 6464,
+      "policy_time_seconds": 11.549449
+    },
+    {
       "policy": "solutions/ours/2026-07-02-solver-1024-no-forced-actions.py",
       "label": "2026-07-02-solver-1024-no-forced-actions",
       "score": 1021,
@@ -83,6 +127,28 @@
       "blocked_moves": 26,
       "remaining_distance": 6102,
       "policy_time_seconds": 14.293646
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-no-forced-layout-canonical-racks.py",
+      "label": "2026-07-02-solver-1024-no-forced-layout-canonical-racks",
+      "score": 890,
+      "seed_scores": [287, 305, 298],
+      "delta_vs_baseline": -118,
+      "delta_vs_1024": -134,
+      "blocked_moves": 34,
+      "remaining_distance": 6734,
+      "policy_time_seconds": 13.893298
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-no-forced-layout-wide-avenues.py",
+      "label": "2026-07-02-solver-1024-no-forced-layout-wide-avenues",
+      "score": 386,
+      "seed_scores": [123, 120, 143],
+      "delta_vs_baseline": -622,
+      "delta_vs_1024": -638,
+      "blocked_moves": 7741,
+      "remaining_distance": 7498,
+      "policy_time_seconds": 59.301194
     },
     {
       "policy": "solutions/ours/c15da13c3eaa-layout-canonical-racks.py",

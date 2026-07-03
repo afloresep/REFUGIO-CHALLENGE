@@ -5,6 +5,8 @@ Date: 2026-07-03
 Code:
 
 - `solutions/public/c15da13c3eaa.py`
+- `solutions/ours/2026-07-02-solver-1024-no-forced-layout-canonical-racks.py`
+- `solutions/ours/2026-07-02-solver-1024-no-forced-layout-wide-avenues.py`
 - `solutions/ours/c15da13c3eaa-layout-canonical-racks.py`
 - `solutions/ours/c15da13c3eaa-layout-wide-avenues.py`
 - `scripts/create-ablation-variants.mjs`
@@ -26,8 +28,11 @@ Command:
 
 ```bash
 npm run make:ablations
+npm run make:1024-ablations
 npm run eval:policy -- solutions/ours/c15da13c3eaa-layout-canonical-racks.py --label c15da13c3eaa-layout-canonical-racks
 npm run eval:policy -- solutions/ours/c15da13c3eaa-layout-wide-avenues.py --label c15da13c3eaa-layout-wide-avenues
+npm run eval:policy -- solutions/ours/2026-07-02-solver-1024-no-forced-layout-canonical-racks.py --label 2026-07-02-solver-1024-no-forced-layout-canonical-racks
+npm run eval:policy -- solutions/ours/2026-07-02-solver-1024-no-forced-layout-wide-avenues.py --label 2026-07-02-solver-1024-no-forced-layout-wide-avenues
 npm run analyze:layouts
 ```
 
@@ -38,6 +43,8 @@ Result:
 | baseline | Team 10 submitted layout | 1008 | 337, 336, 335 | 0 | 4 | 11.92s |
 | layout canonical racks | starter-kit canonical rack layout | 890 | 287, 305, 298 | -118 | 34 | 14.88s |
 | layout wide avenues | 10 two-column shelf strips with wide vertical avenues | 386 | 123, 120, 143 | -622 | 7,741 | 60.75s |
+| 1021 no-forced planner, canonical racks | starter-kit canonical rack layout | 890 | 287, 305, 298 | -118 vs 1008 | 34 | 13.89s |
+| 1021 no-forced planner, wide avenues | 10 two-column shelf strips with wide vertical avenues | 386 | 123, 120, 143 | -622 vs 1008 | 7,741 | 59.30s |
 
 Layout feature snapshot:
 
@@ -55,7 +62,9 @@ The wide-avenue result is worse, not better. It leaves broad vertical corridors,
 
 The first feature metrics explain part of this. Team 10's layout gives shelves more pickup choices on average, with only 256 one-access shelves versus 768 in the canonical rack layout and 920 in the simple wide-avenue layout. The wide-avenue layout also pushes shelf access farther from the nearest base entry. More corridor width did not compensate for lower shelf access multiplicity and worse layout/planner alignment.
 
+Repeating the same layout swaps under the 1021 `no-forced-actions` planner gives exactly the same delivery totals: 890 for canonical racks and 386 for wide avenues. The 1024 planner retuning and removal of forced suffix actions are therefore not enough to overcome these simple layout geometries. The next layout search should perturb the Team 10 topology directly while preserving its short access distances and pickup-cell multiplicity.
+
 Next:
 
-- Search layouts that preserve short access distances while adding explicit return lanes near bases.
+- Search local Team 10 layout perturbations that preserve short access distances while adding explicit return lanes near bases.
 - Retune planner flow parameters after layout changes, because the current flow penalty encodes assumptions from the submitted layout.

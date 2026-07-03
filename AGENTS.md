@@ -47,6 +47,9 @@ Important measured ablations:
 | --- | ---: | --- | --- |
 | 1024 solver | 1024 | 343, 342, 339 | current local closed-gate best |
 | 1024 clean planner floor | 1009 | 337, 335, 337 | retuned config alone barely clears public 1008 |
+| 1024 clean floor, no late priority | 1007 | 338, 334, 335 | late ETA/deadline priority is a small clean-floor effect |
+| 1024 clean floor, public configs | 1005 | 334, 337, 334 | old seed configs and jitter interact rather than adding independently |
+| 1024 clean floor, public jitter | 999 | 333, 335, 331 | deterministic ordering helps only with the retuned configs |
 | 1024 no forced actions | 1021 | 342, 340, 339 | hard suffix overrides are useful but not the main lift |
 | 1024 no stayer-horizon tuning | 1011 | 336, 336, 339 | shorter stayer reservations are a major 1024 mechanism |
 | 1024 no pickup-side retarget | 1018 | 337, 342, 339 | late pickup-side choice adds deliveries |
@@ -145,11 +148,11 @@ If imports fail in a future environment, do not guess scores. Document the missi
 
 ## Next Priorities
 
-1. Isolate retuned `SEED_CONFIGS` versus the public 1008 settings.
-   The clean planner floor is 1009, so the next question is whether that +1 comes only from seed config retuning and deterministic jitter removal.
+1. Search local perturbations of the Team 10 layout around the 1021 no-forced-actions planner.
+   The canonical and wide-avenue swaps still score 890 and 386 under the 1021 planner, so the next useful layout work should preserve Team 10's short access distances and pickup-cell multiplicity while testing explicit return lanes and base-side balancing.
 
-2. Search layout variants around the 1021 no-forced-actions planner.
-   Preserve short access distances while testing explicit return lanes and base-side balancing. Retune planner flow settings after geometry changes.
+2. Retune planner flow settings after each promising geometry change.
+   The current flow penalty and per-seed windows are layout-coupled; do not conclude a geometry is bad before checking a small flow/window retune.
 
 3. Extract more public policies if useful.
    Start with jobs around 930 and 925. Use `npm run fetch:public-code -- <job-id>`.
