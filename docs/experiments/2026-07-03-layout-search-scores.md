@@ -195,7 +195,14 @@ Hardcoded planner internals are also closed: A* wait-cost epsilon
 final-move resolution order (ties all three seeds exactly - never binds).
 21 trials, zero improvements.
 
-Total evaluator runs across all passes: ~846. Every perturbation family's
+A bounded PBS-lite pass (pairwise priority repair: when a mover is blocked
+by a higher-priority robot's reservations, re-plan the pair in swapped order
+and accept only strict joint improvements; caps 4/8, growth tolerance 0/2)
+loses 5-7 deliveries on every seed (337/338/333). Tick-local joint-path
+improvements trade against the bundle's global structure - the same failure
+mode as every other greedy signal in this system.
+
+Total evaluator runs across all passes: ~852. Every perturbation family's
 maximum equals the incumbent exactly - the 1024 solution is converged against
 its entire accessible neighborhood.
 
