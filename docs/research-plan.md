@@ -7,7 +7,7 @@ The goal is to produce a technical postmortem and a better solution path, not ju
 1. Why did several LLM analyses conclude that roughly 921 deliveries was a ceiling?
 2. Which assumption broke when Team 10 reached 1008 deliveries?
 3. How much of the lift came from layout geometry, stateful coordination, seed tuning, and planner details?
-4. Can we find a stronger strategy than the public best solution?
+4. Can we find a stronger strategy than the public best solution and the current 1024 local solver?
 5. What evidence should the final technical writeup show so the explanation is convincing?
 
 ## Workstreams
@@ -59,7 +59,7 @@ Once the evaluator is available or reconstructed:
 - search layouts with lane structure and base-side balancing
 - tune reservation-window parameters by seed
 - compare deterministic and jittered priority rules
-- test whether specialized layouts can beat the 1008 three-seed result
+- test whether cleaner planner/layout search can beat the 1024 three-seed local result
 
 ## Experiment Log Format
 
@@ -96,4 +96,6 @@ When the simulator is available, every numeric claim in the writeup should point
 - [x] Add no-edge-reservation ablation.
 - [x] Add layout ablations.
 - [x] Add layout feature analysis script.
-- [ ] Search layout variants around the Team 10 planner.
+- [x] Add first 1024 mechanism ablations.
+- [ ] Add combined 1024 mechanism ablations.
+- [ ] Search layout variants around the 1021 no-forced-actions planner.

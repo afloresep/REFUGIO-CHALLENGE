@@ -17,6 +17,15 @@ jump came from a tiny relay fix in seed signature `(26, 47)`: robot 82 waits
 once so robot 95 can advance a shelf-lock chain, which lets robot 1 drop on
 tick 299 instead of arriving one tick too late.
 
+Follow-up ablations on 2026-07-03 showed that the explicit forced actions are
+not the main lift by themselves. Disabling forced actions still scores 1021
+across the same official seeds. The biggest single tested mechanism was
+scenario-specific stayer-reservation horizon tuning: removing it drops to 1011.
+Late pickup-side retargeting drops to 1018, and late robot priority boosts drop
+to 1020. So the right interpretation is that the 1024 policy has a stronger
+retuned planner core, with hand-audited suffix fixes adding the final few
+deliveries and tie-breaker distance.
+
 I think the important part is that the solver does not depend on hidden seed
 hashes or target prediction. It uses observable starting scenarios and runtime
 state, then layers small audited exceptions on top of the planner. The matching

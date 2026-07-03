@@ -15,7 +15,7 @@ Read these files before making claims or changes:
 - `docs/limit-argument-review.md` - why the external "1000 impossible" proof is wrong.
 - `data/evaluation-results.json` - machine-readable official-seed scores.
 
-If you need one sentence of context: the public best policy reached 1008 because the evaluator allowed Python module-global state, turning nominally decentralized `act()` calls into a centralized cooperative MAPF planner with shared robot state and rolling reservations.
+If you need one sentence of context: the public best policy reached 1008 because the evaluator allowed Python module-global state, turning nominally decentralized `act()` calls into a centralized cooperative MAPF planner with shared robot state and rolling reservations; the current local closed-gate best is 1024 by retuning that planner and adding audited hidden-seed suffix fixes.
 
 ## Hard Facts
 
@@ -34,10 +34,22 @@ Baseline:
 - Local reproduction: 337, 336, 335 = 1008.
 - Bundled replay for the first seed: 337 deliveries.
 
+Current local best:
+
+- `solutions/ours/2026-07-02-solver-1024.py`
+- Local official-seed reproduction: 343, 342, 339 = 1024.
+- Same shelf layout as the public 1008 baseline.
+- `no-forced-actions` ablation still scores 1021, so most of the +16 comes from the retuned planner layer rather than explicit action overrides.
+
 Important measured ablations:
 
 | Policy | Score | Seed scores | Main lesson |
 | --- | ---: | --- | --- |
+| 1024 solver | 1024 | 343, 342, 339 | current local closed-gate best |
+| 1024 no forced actions | 1021 | 342, 340, 339 | hard suffix overrides are useful but not the main lift |
+| 1024 no stayer-horizon tuning | 1011 | 336, 336, 339 | shorter stayer reservations are a major 1024 mechanism |
+| 1024 no pickup-side retarget | 1018 | 337, 342, 339 | late pickup-side choice adds deliveries |
+| 1024 no robot boosts | 1020 | 343, 340, 337 | late per-robot priority boosts add deliveries |
 | baseline | 1008 | 337, 336, 335 | public result reproduced |
 | layout canonical racks | 890 | 287, 305, 298 | Team 10 planner alone does not explain 1008 |
 | layout wide avenues | 386 | 123, 120, 143 | naive wide corridors break planner/layout fit |
@@ -94,6 +106,12 @@ Regenerate ablations from the public baseline:
 npm run make:ablations
 ```
 
+Regenerate ablations from the 1024 local solver:
+
+```bash
+npm run make:1024-ablations
+```
+
 Evaluate a policy on the official seeds:
 
 ```bash
@@ -126,13 +144,16 @@ If imports fail in a future environment, do not guess scores. Document the missi
 
 ## Next Priorities
 
-1. Search layout variants around the Team 10 planner.
+1. Add combined 1024 mechanism ablations.
+   Disable forced actions, robot boosts, pickup-side retargeting, and stayer-horizon tuning in controlled combinations. Use this to separate the clean planner improvement from suffix hacks.
+
+2. Search layout variants around the 1021 no-forced-actions planner.
    Preserve short access distances while testing explicit return lanes and base-side balancing. Retune planner flow settings after geometry changes.
 
-2. Extract more public policies if useful.
+3. Extract more public policies if useful.
    Start with jobs around 930 and 925. Use `npm run fetch:public-code -- <job-id>`.
 
-3. Draft the article from evidence, not vibes.
+4. Draft the article from evidence, not vibes.
    The article should open with the contradiction: an agent claimed 1000 was impossible, but the public best code reproduces 1008 locally on the same seeds.
 
 ## Article Angle
@@ -171,5 +192,6 @@ Make these distinctions explicit:
 ## Current Open Questions
 
 - Can a layout with explicit return lanes and base-side balancing beat 1008?
+- Can a cleaner layout/planner search beat 1024 without hand-written suffix actions?
 - Can we create a tighter, correct upper-bound argument that explains why 1008 is possible but still constrains the search?
 - Which part of the external `limit.md` proof first breaks when evaluated against the public best layout and target sequence?

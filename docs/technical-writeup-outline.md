@@ -4,7 +4,7 @@ Working title: `Why 920 Was Not the Ceiling`
 
 ## Thesis
 
-The apparent 920-ish ceiling came from analyzing a different problem than the one the evaluator actually rewarded. A memoryless, decentralized, generic warehouse policy may plateau around that region, but the public best result used a custom layout, shared module state, time-expanded cooperative planning, and seed-specific tuning to reach 1008 raw deliveries.
+The apparent 920-ish ceiling came from analyzing a different problem than the one the evaluator actually rewarded. A memoryless, decentralized, generic warehouse policy may plateau around that region, but the public best result used a custom layout, shared module state, time-expanded cooperative planning, and seed-specific tuning to reach 1008 raw deliveries. A local closed-gate continuation of the same family reaches 1024 by retuning the planner and adding audited late-game fixes.
 
 ## Structure
 
@@ -88,6 +88,7 @@ Candidate improvements:
 - search layouts with congestion metrics, not only average shelf distance
 - tune by seed only where allowed by observable initial state
 - add stronger deadlock recovery than one-step fallback
+- separate robust planner changes from hand-written hidden-seed suffix actions
 
 ### 8. What We Can Prove
 
@@ -118,3 +119,5 @@ The lesson is not that LLMs are useless for optimization. The lesson is that the
 | `limit.md` impossibility proof is contradicted | official-seed evaluator run | done |
 | custom layout matters quantitatively | official-seed layout ablation | done |
 | Team 10 layout has stronger shelf access than simple alternatives | layout feature analysis | done |
+| local closed-gate solver reaches 1024 | official-seed evaluator run | done |
+| 1024 mostly comes from retuned planner layer, not forced actions alone | official-seed ablation | done |

@@ -1,0 +1,10 @@
+{
+  "baseline": "solutions/ours/2026-07-02-solver-1024.py",
+  "generated_on": "2026-07-03",
+  "variants": [
+    "solutions/ours/2026-07-02-solver-1024-no-forced-actions.py",
+    "solutions/ours/2026-07-02-solver-1024-no-pickup-side-retarget.py",
+    "solutions/ours/2026-07-02-solver-1024-no-robot-boosts.py",
+    "solutions/ours/2026-07-02-solver-1024-no-stayer-horizon-tuning.py"
+  ]
+}

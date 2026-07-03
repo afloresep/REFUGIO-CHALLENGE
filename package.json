@@ -9,6 +9,7 @@
     "eval:policy": "node scripts/run-evaluation.mjs",
     "fetch:public-code": "node scripts/fetch-public-code.mjs",
     "make:ablations": "node scripts/create-ablation-variants.mjs",
+    "make:1024-ablations": "node scripts/create-1024-ablation-variants.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

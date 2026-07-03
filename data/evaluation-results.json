@@ -27,7 +27,51 @@
       "delta_vs_baseline": 16,
       "blocked_moves": 12,
       "remaining_distance": 6180,
-      "policy_time_seconds": 46.266884
+      "policy_time_seconds": 13.745917
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-no-forced-actions.py",
+      "label": "2026-07-02-solver-1024-no-forced-actions",
+      "score": 1021,
+      "seed_scores": [342, 340, 339],
+      "delta_vs_baseline": 13,
+      "delta_vs_1024": -3,
+      "blocked_moves": 2,
+      "remaining_distance": 7082,
+      "policy_time_seconds": 14.304103
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-no-pickup-side-retarget.py",
+      "label": "2026-07-02-solver-1024-no-pickup-side-retarget",
+      "score": 1018,
+      "seed_scores": [337, 342, 339],
+      "delta_vs_baseline": 10,
+      "delta_vs_1024": -6,
+      "blocked_moves": 9,
+      "remaining_distance": 6098,
+      "policy_time_seconds": 12.815648
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-no-robot-boosts.py",
+      "label": "2026-07-02-solver-1024-no-robot-boosts",
+      "score": 1020,
+      "seed_scores": [343, 340, 337],
+      "delta_vs_baseline": 12,
+      "delta_vs_1024": -4,
+      "blocked_moves": 14,
+      "remaining_distance": 6092,
+      "policy_time_seconds": 14.340075
+    },
+    {
+      "policy": "solutions/ours/2026-07-02-solver-1024-no-stayer-horizon-tuning.py",
+      "label": "2026-07-02-solver-1024-no-stayer-horizon-tuning",
+      "score": 1011,
+      "seed_scores": [336, 336, 339],
+      "delta_vs_baseline": 3,
+      "delta_vs_1024": -13,
+      "blocked_moves": 26,
+      "remaining_distance": 6102,
+      "policy_time_seconds": 14.293646
     },
     {
       "policy": "solutions/ours/c15da13c3eaa-layout-canonical-racks.py",

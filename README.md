@@ -24,7 +24,7 @@ It also contains the beginning of the analysis track:
 - `data/public-leaderboard-snapshot.json` preserves the public leaderboard facts
   used by the analysis.
 - `data/evaluation-results.json` records local official-seed scores for the
-  extracted baseline and first ablations.
+  extracted public baseline, the current 1024 local solver, and ablations.
 - `scripts/analyze-replays.mjs` summarizes vendored replay payloads.
 
 ## Run
@@ -85,3 +85,6 @@ ingested deliberately, but normal app routes use local data only.
 - [1024 hidden-seed report](docs/experiments/2026-07-02-1024-hidden-seed-report.md)
   summarizes the local closed-gate improvement over the public 1008 raw-score
   job.
+- [1024 mechanism ablations](docs/experiments/2026-07-03-1024-mechanism-ablation-scores.md)
+  separate the cleaner retuned planner layer from explicit late-game action
+  overrides.
