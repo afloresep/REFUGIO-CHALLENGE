@@ -131,6 +131,32 @@ any single seed exceeding its threshold beats 1024.
   ABBA pred 1077 -> actual 1004. Predicted deltas of +4..+7 dissolve in the
   ~+-10 model-to-actual noise.
 
+## Micro-surgery on the 1024 trajectory bundle (goal: any seed +1)
+
+Tooling: `scripts/layout_search/waste_report.py`, `trace_robot.py`, plus forced-chain /
+boost / hold injection trials under `outputs/layout-search/forced/`.
+
+Findings on seed bff0 (threshold 344):
+
+- Waste analysis over all near-miss robots found one rich chain: robot 83
+  (deficit 10) waited 28 ticks at its target shelf for a shelf lock held by
+  robot 65, whose return leg wasted ~8 ticks yielding to robot 49 cutting
+  eastbound into row 36.
+- Every intervention lost net deliveries: forced column-1 descent for rid 69
+  (-3), boosts for rid 65/69/83 at any timing (0 to -5), holds on rid 49 or 83
+  (-3), companion-boost combos (-3 to -5).
+- Root cause: the baseline 343 includes ~3 deliveries that exist only through
+  the hand-tuned FORCED_ACTIONS suffix chains keyed to exact (tick, position)
+  pairs (e.g. rid 11's x=25 climb dropping at tick 299). Any upstream
+  perturbation desyncs those keys and forfeits those deliveries, so an
+  intervention must gain >= 4 raw deliveries to net +1. The largest genuine
+  slack found anywhere in the bundle is ~2 ticks (rid 83 ends 2 cells short in
+  the best branch, with victims needing 9-10 unrecoverable ticks).
+- The only deficit-2 robot across all seeds (rid 65 on dfbf) has BFS-perfect
+  legs everywhere: it is time-bound, unfixable by any routing.
+- Jitter draws are full-desync lotteries over the same structure: 16 draws per
+  seed scored 337-343 / <=338 / <=337, never beating the choreographed bundle.
+
 ## Verdict
 
 No candidate beats 1024. Final standings:

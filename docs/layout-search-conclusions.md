@@ -121,14 +121,31 @@ best offline predictor within a lattice family. Its exploitable error is
 scored 998 actual. Validate any candidate with real evaluations; never trust
 serving-model deltas under ~20 points.
 
-## Remaining paths toward >1024 (all heavy, none exhausted)
+## Micro-surgery attempt (second pass, same day)
 
-- Hand-crafted forced-action trajectory chains (the mechanism behind
-  1021 -> 1024), guided by full trajectory microscopy.
-- Multi-boost combinatorics (joint priority overrides for robot pairs and
-  earlier boost ticks).
+A second pass attacked the 1024 trajectory bundle directly with automated
+waste analysis (`waste_report.py`, `trace_robot.py`) and ~30 targeted
+forced-chain / boost / hold trials on the richest slack chain (seed bff0:
+robot 83 waited 28 ticks on a shelf lock held by robot 65, which itself lost
+~8 ticks yielding to robot 49). Every intervention netted -1 to -5:
+
+- The baseline 343 includes ~3 deliveries that exist only via the hand-tuned
+  forced-action suffix chains keyed to exact (tick, position) pairs. Any
+  upstream perturbation desyncs them, so an intervention must gain >= 4 raw
+  deliveries to net +1 - and the largest genuine slack in the bundle is
+  ~2 ticks.
+- The only deficit-2 near-miss across all seeds (rid 65, dfbf) is BFS-perfect
+  on every leg: time-bound, unfixable by routing.
+- Jitter re-draws (16/seed, full choreography desync) max out at 343/338/337.
+
+## Remaining paths toward >1024 (heavy)
+
+- Rebuild the entire suffix choreography from scratch on top of a favorable
+  early-game perturbation (the prior 1021 -> 1024 step took ~200 hand-tuned
+  forced entries; expected yield per rebuild is +2-4, and it must first
+  recover the -3 the perturbation costs).
 - A structurally better planner: true windowed PBS/CBS instead of
-  prioritized time-windowed A*.
+  prioritized time-windowed A*, replanning the whole bundle jointly.
 
 ## Article implications
 
