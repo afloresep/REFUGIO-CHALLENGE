@@ -2,10 +2,13 @@
 
 Date: 2026-07-01
 
+Updated: 2026-07-03 with the no-edge-reservation ablation.
+
 Code:
 
 - `solutions/public/c15da13c3eaa.py`
 - `solutions/ours/c15da13c3eaa-default-config-only.py`
+- `solutions/ours/c15da13c3eaa-no-edge-reservations.py`
 - `solutions/ours/c15da13c3eaa-no-flow-penalty.py`
 - `solutions/ours/c15da13c3eaa-no-jitter.py`
 - `solutions/ours/c15da13c3eaa-no-shared-brain.py`
@@ -30,6 +33,7 @@ Command:
 ```bash
 npm run eval:policy -- solutions/public/c15da13c3eaa.py --label c15da13c3eaa
 npm run eval:policy -- solutions/ours/c15da13c3eaa-default-config-only.py --label c15da13c3eaa-default-config-only
+npm run eval:policy -- solutions/ours/c15da13c3eaa-no-edge-reservations.py --label c15da13c3eaa-no-edge-reservations
 npm run eval:policy -- solutions/ours/c15da13c3eaa-no-flow-penalty.py --label c15da13c3eaa-no-flow-penalty
 npm run eval:policy -- solutions/ours/c15da13c3eaa-no-jitter.py --label c15da13c3eaa-no-jitter
 npm run eval:policy -- solutions/ours/c15da13c3eaa-no-shared-brain.py --label c15da13c3eaa-no-shared-brain
@@ -43,6 +47,7 @@ Result:
 | --- | ---: | --- | ---: | ---: | ---: |
 | baseline | 1008 | 337, 336, 335 | 0 | 4 | 11.92s |
 | default config only | 1000 | 336, 333, 331 | -8 | 3 | 12.70s |
+| no edge reservations | 451 | 137, 128, 186 | -557 | 2,783 | 11.69s |
 | no flow penalty | 992 | 334, 330, 328 | -16 | 13 | 13.18s |
 | no jitter | 1001 | 334, 336, 331 | -7 | 8 | 12.19s |
 | no shared brain | timed out | 172, -, - | invalid | 4,813 on completed seed | 180.00s |
@@ -59,10 +64,11 @@ The soft flow penalty is the largest of these first ablations at -16 deliveries 
 
 Shortening the reservation horizon to 16 costs 11 deliveries while reducing runtime, which gives a useful speed/score knob for future search.
 
+Edge-swap reservations are decisive. The no-edge-reservation ablation keeps the Team 10 layout, shared `_BRAIN`, seed configs, full cell reservations, soft flow penalty, and planning window, but removes reverse-edge checks from `_astar` and stops recording planned path edges. It falls to 451 deliveries with 2,783 blocked moves. That means the time-expanded edge reservations are not a cosmetic safety check; they prevent head-on route plans that the one-step resolver cannot repair once congestion forms.
+
 The no-shared-brain result is the major result for the postmortem. A strict no-shared-state version times out after completing one seed because it rebuilds the world and distance fields on every robot call. A fairer version that keeps only static world/distance caching, but removes persistent robot-planner state, finishes and scores 492. It produces 14,305 blocked moves versus 4 in the baseline. This isolates the real reason the 1000 result was possible: cross-robot/cross-tick planner state and coordinated reservations, not just layout or seed tuning.
 
 Next:
 
-- Add ablations for no edge reservations.
 - Compare the same planner against canonical and wide-avenue layouts.
 - Run repeated local variants only when the policy contains jitter; otherwise deterministic runs should be stable for these seeds.

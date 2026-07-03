@@ -1,8 +1,9 @@
 {
   "baseline": "solutions/public/c15da13c3eaa.py",
-  "generated_on": "2026-07-01",
+  "generated_on": "2026-07-03",
   "variants": [
     "solutions/ours/c15da13c3eaa-default-config-only.py",
+    "solutions/ours/c15da13c3eaa-no-edge-reservations.py",
     "solutions/ours/c15da13c3eaa-no-flow-penalty.py",
     "solutions/ours/c15da13c3eaa-no-jitter.py",
     "solutions/ours/c15da13c3eaa-no-shared-brain.py",

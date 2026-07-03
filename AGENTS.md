@@ -43,6 +43,7 @@ Important measured ablations:
 | no flow penalty | 992 | 334, 330, 328 | soft lane bias matters |
 | no jitter | 1001 | 334, 336, 331 | jitter helps but is not essential |
 | short window 16 | 997 | 334, 336, 327 | reservation horizon matters |
+| no edge reservations | 451 | 137, 128, 186 | head-on swap prevention is decisive |
 | no shared brain, cached world | 492 | 172, 153, 167 | shared robot-planner state is decisive |
 | no shared brain, fresh world | timed out | 172, -, - | no state plus no cache is too slow |
 
@@ -116,19 +117,16 @@ If imports fail in a future environment, do not guess scores. Document the missi
 
 ## Next Priorities
 
-1. Add a no-edge-reservation ablation.
-   Keep shared `_BRAIN`, cell reservations, and layout. Remove only edge-swap reservations. Score it on official seeds and record whether head-on swap prevention is a major part of the 1008.
-
-2. Add layout ablations.
+1. Add layout ablations.
    Run the Team 10 planner on canonical rack blocks and wide avenues. This separates custom layout value from planner value.
 
-3. Add a layout feature analysis script.
+2. Add a layout feature analysis script.
    Compute shelf access counts, average base-entry distances, aisle widths/connectivity, and congestion proxies for public layouts and ablations.
 
-4. Extract more public policies if useful.
+3. Extract more public policies if useful.
    Start with jobs around 930 and 925. Use `npm run fetch:public-code -- <job-id>`.
 
-5. Draft the article from evidence, not vibes.
+4. Draft the article from evidence, not vibes.
    The article should open with the contradiction: an agent claimed 1000 was impossible, but the public best code reproduces 1008 locally on the same seeds.
 
 ## Article Angle
@@ -166,7 +164,6 @@ Make these distinctions explicit:
 
 ## Current Open Questions
 
-- How much does edge-reservation logic contribute independent of cell reservations?
 - How much of 1008 is layout versus planner when the planner is held fixed?
 - Can a layout with explicit return lanes and base-side balancing beat 1008?
 - Can we create a tighter, correct upper-bound argument that explains why 1008 is possible but still constrains the search?

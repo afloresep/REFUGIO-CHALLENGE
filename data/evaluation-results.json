@@ -1,5 +1,6 @@
 {
   "captured_on": "2026-07-01",
+  "updated_on": "2026-07-03",
   "evaluator": "python3 -m warehouse.eval_runner",
   "seeds": [
     "bff0fb14575b4676b1f0f01bfc7b0126",
@@ -27,6 +28,16 @@
       "blocked_moves": 3,
       "remaining_distance": 6478,
       "policy_time_seconds": 12.704597
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-no-edge-reservations.py",
+      "label": "c15da13c3eaa-no-edge-reservations",
+      "score": 451,
+      "seed_scores": [137, 128, 186],
+      "delta_vs_baseline": -557,
+      "blocked_moves": 2783,
+      "remaining_distance": 5949,
+      "policy_time_seconds": 11.686172
     },
     {
       "policy": "solutions/ours/c15da13c3eaa-no-flow-penalty.py",

@@ -93,4 +93,5 @@ When the simulator is available, every numeric claim in the writeup should point
 - [x] Score first ablation variants.
 - [x] Add no-shared-brain ablations.
 - [x] Review external `limit.md` 1000-impossible argument.
-- [ ] Add no-edge-reservation ablation.
+- [x] Add no-edge-reservation ablation.
+- [ ] Add layout ablations.

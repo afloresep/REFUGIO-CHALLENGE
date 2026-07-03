@@ -99,6 +99,36 @@ function shortWindow16(source) {
   );
 }
 
+function noEdgeReservations(source) {
+  let next = replaceLine(source, /    cell_res=\{\}; edge_res=\{\}/, "    cell_res={}");
+  next = replaceLine(
+    next,
+    /        path=_astar\(world,start,goal_field\[rid\],cell_res,edge_res\)/,
+    "        path=_astar(world,start,goal_field[rid],cell_res)",
+  );
+  next = replaceLine(
+    next,
+    /        for i in range\(min\(last,WINDOW\)\): edge_res\[\(i,path\[i\],path\[i\+1\]\)\]=rid\n/,
+    "",
+  );
+  next = replaceLine(
+    next,
+    /def _astar\(world, start, field, cell_res, edge_res\):/,
+    "def _astar(world, start, field, cell_res):",
+  );
+  next = replaceLine(
+    next,
+    /            if within and \(\(nt,m\) in cell_res or \(t,m,n\) in edge_res\): continue/,
+    "            if within and (nt,m) in cell_res: continue",
+  );
+
+  return withHeader(
+    next,
+    "no-edge-reservations",
+    "Measure whether rolling edge-swap reservations add throughput beyond shared state, cell reservations, flow bias, seed config, and first-step conflict resolution.",
+  );
+}
+
 function noSharedBrain(source) {
   const pattern = /^_BRAIN=_Brain\(\)\n\n[\s\S]*?^def _plan/m;
   const replacement = [
@@ -185,6 +215,7 @@ function noSharedBrainCachedWorld(source) {
 
 const variants = [
   ["c15da13c3eaa-default-config-only.py", defaultConfigOnly],
+  ["c15da13c3eaa-no-edge-reservations.py", noEdgeReservations],
   ["c15da13c3eaa-no-flow-penalty.py", noFlowPenalty],
   ["c15da13c3eaa-no-jitter.py", noJitter],
   ["c15da13c3eaa-no-shared-brain.py", noSharedBrain],
@@ -211,7 +242,7 @@ async function main() {
     `${JSON.stringify(
       {
         baseline: "solutions/public/c15da13c3eaa.py",
-        generated_on: "2026-07-01",
+        generated_on: "2026-07-03",
         variants: written,
       },
       null,
