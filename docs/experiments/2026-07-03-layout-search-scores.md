@@ -274,6 +274,43 @@ rebuilds per seed) plus re-sweeps found no further single-robot conversions;
 the nearest misses (dfbf rid 38/41 at +1 tick, others at +2/+3) motivate
 leave-one-out pair repair (`pair_repair.py`).
 
+## Multi-robot joint edits: 1030 -> 1035
+
+Each remaining near-miss fails because of specific other robots, so the
+tooling escalates through mask-guided joint edits, all validated by the
+exact simulator with strict-improvement acceptance:
+
+1. **Leave-one-out pair repair** (`pair_repair.py`): mask each other robot's
+   traffic+locks in turn; if the gain robot's +1 day then fits, rebuild that
+   blocker around the gain robot's fixed ideal day. Converts dfbf rid 38
+   (blocker 80) -> **1030**, and 546a rid 45 (blocker 21) -> 1031.
+2. **Greedy leave-k-out** (`multi_mask.py`): masks scored by the landing tick
+   of the extra drop on an extended horizon; up to 3 masks. Converts 546a
+   rid 59 (masks 54+60) -> 1032 and bff0 rid 1 (masks 9+84+29) -> later 349.
+3. **Blocker/victim local fixes** (`joint_repair.py`): the bff0 rid 69 case
+   needed a three-robot edit with two new tricks: traffic-only masks (locks
+   stay live so the ideal day cannot steal a masked robot's pickup), and
+   wait-or-wander re-parking (robot 71's naive post-fix parking spot sat on
+   robot 24's only return lane). Every local fix rebuilds the whole remaining
+   day of the touched robot, lock-aware. -> **1033**.
+4. **Pair-mask lookahead** (`pair_mask.py`): for non-submodular misses where
+   no single mask helps, probe all pairs/triples among robots interacting
+   with the gain robot's planned corridor. dfbf rid 41 had an 11-tick
+   physics headroom hidden behind two stacked blockers (17+43) -> 344.
+
+Milestones verified on the official evaluator:
+
+| Policy | Score | Seeds | Mechanism |
+| --- | ---: | --- | --- |
+| replay-solver-1029 | 1029 | 347/342/340 | strip + lock-aware sweep |
+| replay-solver-1030 | 1030 | 347/343/340 | + pair repair |
+| replay-solver-1033 | 1033 | 348/343/342 | + multi-mask, victim cascade |
+| replay-solver-1035 | 1035 | 349/344/342 | + suffix-rebuild cascade, pair-mask |
+
+Free-space floors (all traffic masked) bound the remaining single-robot
+headroom: several robots per seed have floors <= 299 but sit behind
+multi-robot knots; dfbf rid 26 (floor 303) is physically unconvertible.
+
 ## Verdict (superseded twice)
 
 The live-planner verdict was superseded by replay-matrix policies. Current

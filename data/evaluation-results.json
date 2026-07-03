@@ -736,6 +736,22 @@
    "remaining_distance": 12245,
    "policy_time_seconds": 0.019486,
    "notes": "joint_repair suffix-rebuild cascade converts dfbf rid 41 (masks 17,43) and bff0 rid 1 (masks 9,84,29); 1035 = 349+344+342"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1036)",
+   "label": "2026-07-03-replay-solver-1036",
+   "score": 1036,
+   "seed_scores": [
+    349,
+    344,
+    343
+   ],
+   "delta_vs_baseline": 28,
+   "delta_vs_1024": 12,
+   "blocked_moves": 0,
+   "remaining_distance": 12235,
+   "policy_time_seconds": 0.01986,
+   "notes": "min_mask irreducible-core search converts 546a rid 20 (core 32,75,78); 1036 = 349+344+343"
   }
  ]
 }
