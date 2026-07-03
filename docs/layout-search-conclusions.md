@@ -138,6 +138,12 @@ robot 83 waited 28 ticks on a shelf lock held by robot 65, which itself lost
   on every leg: time-bound, unfixable by routing.
 - Jitter re-draws (16/seed, full choreography desync) max out at 343/338/337.
 
+A final 240-trial randomized boost lottery (`grind_1024.py`, ~80 draws per
+seed at ticks 40-240) also produced zero strict improvements, with observed
+maxima landing exactly on 343 / 342 / 339. Across ~750 evaluator runs, every
+perturbation family's maximum equals the incumbent: 1024 is converged against
+its entire accessible neighborhood.
+
 ## Remaining paths toward >1024 (heavy)
 
 - Rebuild the entire suffix choreography from scratch on top of a favorable

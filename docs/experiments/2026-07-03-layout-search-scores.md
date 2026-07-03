@@ -167,7 +167,14 @@ STAYER {19, 20, 22, 23} x FLOW {0.06, 0.09}; bff0 pickup ticks
 to the incumbents (identical waste tables) - genuinely different trajectory
 bundles all score 2-6 below the choreographed incumbents.
 
-Total evaluator runs across both passes: ~500.
+A final unattended ratchet (`scripts/layout_search/grind_1024.py`) sampled 240
+randomized single-robot priority-boost perturbations (ticks 40-240, all/carry,
+~80 per seed) against strict per-seed thresholds: zero improvements, with the
+observed maxima landing exactly on the incumbent scores (343 / 342 / 339).
+
+Total evaluator runs across all passes: ~750. Every perturbation family's
+maximum equals the incumbent exactly - the 1024 solution is converged against
+its entire accessible neighborhood.
 
 ## Verdict
 
