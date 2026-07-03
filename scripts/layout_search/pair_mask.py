@@ -23,11 +23,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from layout_search import layoutlib as L
 from layout_search import matrix_edit as ME
 from layout_search import sweep_compress as SC
-from layout_search.pair_repair import with_row
+from layout_search.pair_repair import masked, with_row
 from layout_search.multi_mask import final_o
 from layout_search.joint_repair import (
     Ctx, conflicts_with, local_fix, park, probe, traffic_mask,
 )
+
+FULL = False  # --full: mask locks too (blockers' picks get retimed later)
 
 
 def planned_path(data, pos, g, trips):
@@ -70,10 +72,21 @@ def masked_pos(pos, masks):
     return p
 
 
+def masked_state(data, pos, masks):
+    """(data, pos) with masks applied; FULL also blanks rows (removes locks)."""
+    if not FULL:
+        return data, masked_pos(pos, masks)
+    d, p = data, pos
+    for b in masks:
+        d, p = masked(d, p, b)
+    return d, p
+
+
 def apply_masks(ctx, data, pos, best, g, masks):
     """joint_repair pipeline with a preset mask list."""
     trips = best[g] + 1
-    row_g = SC.build_row(data, masked_pos(pos, masks), g, trips)
+    d_m, pos_m = masked_state(data, pos, masks)
+    row_g = SC.build_row(d_m, pos_m, g, trips)
     if row_g is None or final_o(row_g) is None or final_o(row_g) > 299:
         return None, "real build failed"
     d_j, pos_j = with_row(data, pos, g, row_g)
@@ -86,6 +99,11 @@ def apply_masks(ctx, data, pos, best, g, masks):
                 return None, f"blocker {b} unfixable"
             d_j, pos_j = with_row(d_j, pos_j, b, new_b)
         movers.append(b)
+    # re-plan g against the concrete fixed-blocker state when possible:
+    # blocker fixes may have re-timed locks the masked ideal relied on
+    row_g2 = SC.build_row(d_j, pos_j, g, trips)
+    if row_g2 is not None and final_o(row_g2) is not None and final_o(row_g2) <= 299:
+        d_j, pos_j = with_row(d_j, pos_j, g, row_g2)
     for _round in range(6):
         d_fin = ME.deliveries(ME.simulate(d_j))
         losers = [r for r in range(L.ROBOT_COUNT) if d_fin[r] < best[r]]
@@ -96,7 +114,9 @@ def apply_masks(ctx, data, pos, best, g, masks):
             conf = conflicts_with(pos_j, v, [m for m in movers if m != v])
             if not conf:
                 continue
-            new_v = local_fix(ctx, d_j, pos_j, v, conf, best[v])
+            # the gain robot must be repaired at its NEW delivery count
+            n = trips if v == g else best[v]
+            new_v = local_fix(ctx, d_j, pos_j, v, conf, n)
             if new_v is None:
                 continue
             d_j, pos_j = with_row(d_j, pos_j, v, new_v)
@@ -124,23 +144,25 @@ def run(data, gains, out: Path):
         print(f"  g={g}: {len(cand)} interactors")
         t_base = probe(data, pos, g, trips)
         winners = []
+        pair_scores = []
         for b1, b2 in itertools.combinations(cand, 2):
-            t = probe(data, masked_pos(pos, [b1, b2]), g, trips)
-            if t is not None and t <= 299:
+            d_m, pos_m = masked_state(data, pos, [b1, b2])
+            t = probe(d_m, pos_m, g, trips)
+            if t is None:
+                continue
+            if t <= 299:
                 winners.append((t, [b1, b2]))
+            elif t < (t_base or 999):
+                pair_scores.append((t, [b1, b2]))
         if not winners:
             # triples seeded by best-scoring pairs
-            pair_scores = []
-            for b1, b2 in itertools.combinations(cand, 2):
-                t = probe(data, masked_pos(pos, [b1, b2]), g, trips)
-                if t is not None and t < (t_base or 999):
-                    pair_scores.append((t, [b1, b2]))
             pair_scores.sort()
             for t2, pair in pair_scores[:5]:
                 for b3 in cand:
                     if b3 in pair:
                         continue
-                    t = probe(data, masked_pos(pos, pair + [b3]), g, trips)
+                    d_m, pos_m = masked_state(data, pos, pair + [b3])
+                    t = probe(d_m, pos_m, g, trips)
                     if t is not None and t <= 299:
                         winners.append((t, pair + [b3]))
                 if winners:
@@ -170,11 +192,15 @@ def run(data, gains, out: Path):
 
 
 def main():
+    global FULL
     ap = argparse.ArgumentParser()
     ap.add_argument("matrix")
     ap.add_argument("out")
     ap.add_argument("--gain", required=True)
+    ap.add_argument("--full", action="store_true",
+                    help="mask locks too, not just traffic")
     args = ap.parse_args()
+    FULL = args.full
     data = ME.load(Path(args.matrix))
     run(data, [int(x) for x in args.gain.split(",")], Path(args.out))
 

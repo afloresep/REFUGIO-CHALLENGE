@@ -298,6 +298,16 @@ exact simulator with strict-improvement acceptance:
    with the gain robot's planned corridor. dfbf rid 41 had an 11-tick
    physics headroom hidden behind two stacked blockers (17+43) -> 344.
 
+5. **Minimal-mask core search** (`min_mask.py`): for deep knots, mask ALL
+   corridor interactors (guaranteed feasible when the free-space floor is
+   under 300), then greedily eliminate masks to an irreducible blocker core.
+   Cores of 2-6 robots converted 546a rid 20/66/13, dfbf rid 65/57, and
+   bff0 rid 65 - conversions unreachable by pairs/triples enumeration.
+6. **Iteration driver** (`iterate.py`): every accepted edit reshapes the
+   traffic field, so the loop sweep -> shortfall probe -> floor triage ->
+   min-mask repeats per seed until dry; fresh candidates kept appearing for
+   several rounds.
+
 Milestones verified on the official evaluator:
 
 | Policy | Score | Seeds | Mechanism |
@@ -306,10 +316,14 @@ Milestones verified on the official evaluator:
 | replay-solver-1030 | 1030 | 347/343/340 | + pair repair |
 | replay-solver-1033 | 1033 | 348/343/342 | + multi-mask, victim cascade |
 | replay-solver-1035 | 1035 | 349/344/342 | + suffix-rebuild cascade, pair-mask |
+| replay-solver-1036 | 1036 | 349/344/343 | + minimal-mask cores |
+| replay-solver-1038/1039 | 1039 | 350/346/343 | + more cores (2-4 robots) |
+| replay-solver-1041 | 1041 | 350/346/345 | + iterate loop (6-robot core) |
 
 Free-space floors (all traffic masked) bound the remaining single-robot
 headroom: several robots per seed have floors <= 299 but sit behind
-multi-robot knots; dfbf rid 26 (floor 303) is physically unconvertible.
+multi-robot knots; robots with floors > 299 (e.g. dfbf rid 26 at 303) are
+physically unconvertible in the current bundle shape.
 
 ## Verdict (superseded twice)
 

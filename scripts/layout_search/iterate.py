@@ -25,7 +25,7 @@ from layout_search import pair_mask as PM
 from layout_search import sweep_compress as SW
 from layout_search.joint_repair import Ctx, probe
 from layout_search.pair_mask import apply_masks, interactors, masked_state, planned_path
-from layout_search.min_mask import minimal_masks
+from layout_search.min_mask import ideal_candidates, minimal_masks
 from layout_search.pair_repair import masked
 
 MAX_SHORTFALL = 10
@@ -82,26 +82,26 @@ def cycle(data, out: Path, exclude: set[int]):
         if fl is None or fl > 299:
             print(f"  g={g}: floor {fl}, dead", flush=True)
             continue
-        cells = planned_path(data, pos, g, trips)
-        if cells is None:
+        cand = [b for b in (ideal_candidates(data, pos, g, trips) or []) if b not in exclude]
+        if not cand:
             continue
-        cand = [b for b in interactors(pos, g, cells) if b not in exclude]
-        core, t_all = minimal_masks(data, pos, g, trips, cand)
-        if core is None:
+        cores, t_all = minimal_masks(data, pos, g, trips, cand)
+        if cores is None:
             print(f"  g={g}: all-mask lands {t_all}, skip", flush=True)
             continue
-        print(f"  g={g}: floor {fl}, core {core}", flush=True)
-        trial, info = apply_masks(ctx, data, pos, best, g, core)
-        if trial is None:
-            print(f"  g={g}: {info}", flush=True)
-            continue
-        d = ME.deliveries(ME.simulate(trial))
-        if sum(d) > total:
-            print(f"  g={g}: {total} -> {sum(d)} ({info})", flush=True)
-            data, best, total, improved = trial, d, sum(d), True
-            pos = ME.positions_by_tick(ME.simulate(data, record=True))
-            out.write_text(json.dumps(data))
-        else:
+        for core in cores:
+            print(f"  g={g}: floor {fl}, core {core}", flush=True)
+            trial, info = apply_masks(ctx, data, pos, best, g, core)
+            if trial is None:
+                print(f"  g={g}: {info}", flush=True)
+                continue
+            d = ME.deliveries(ME.simulate(trial))
+            if sum(d) > total:
+                print(f"  g={g}: {total} -> {sum(d)} ({info})", flush=True)
+                data, best, total, improved = trial, d, sum(d), True
+                pos = ME.positions_by_tick(ME.simulate(data, record=True))
+                out.write_text(json.dumps(data))
+                break
             print(f"  g={g}: sim rejected {sum(d)}", flush=True)
     return data, total, improved
 

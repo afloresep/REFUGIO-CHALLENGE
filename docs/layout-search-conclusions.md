@@ -10,7 +10,7 @@ Tooling: `scripts/layout_search/`
 Goal: find a policy/layout that beats the local best of 1024 deliveries
 (343, 342, 339) on the three official seeds.
 
-**Outcome (final): 1024 WAS beaten - 1026 (345, 342, 339) via the replay-matrix reframe (see below). The intermediate conclusion that 1024 was unbeatable held only for reactive-planner policies.**
+**Outcome (final): 1024 WAS beaten - current best 1041 (350, 346, 345) via the replay-matrix reframe and its edit stack (see below and the experiment log). The intermediate conclusion that 1024 was unbeatable held only for reactive-planner policies.**
 
 Original intermediate outcome: After ~350 evaluator runs across every
 systematically searchable dimension, 1024 stands as a sharp local optimum.
@@ -180,12 +180,24 @@ tick 0) eliminates reactions entirely: the replayed 1024 bundle reproduces
 exactly, edits have no cascade surface, and the evaluator's own simulator
 validates each edit. A day-compression sweep found robot 68 on seed bff0
 convertible with zero collateral (1025 = 344 + 342 + 339); re-sweeping from
-that state converted robot 17 as well (3 -> 4 deliveries):
-**final score 1026 = 345 + 342 + 339**
-(`solutions/ours/2026-07-03-replay-solver-1026.py`). A third conversion
-(robot 37) works alone but does not compose with robot 17 - each edit shifts
-shelf-lock timing the other depends on. The barrier term in the closure
-inequality was a property of the policy class, not the problem.
+that state converted robot 17 as well (1026 = 345 + 342 + 339). The barrier
+term in the closure inequality was a property of the policy class, not the
+problem.
+
+The edit stack then escalated (see the experiment log for each mechanism):
+dead-tail stripping (88-94 robots per seed move pointlessly after their last
+delivery; removing that traffic is collateral-free by construction),
+lock-aware day compression, global left-compaction, leave-one-out pair
+repair, greedy multi-masking, suffix-rebuild victim cascades, pair/triple
+mask lookahead, and minimal-mask core search over ideal-corridor
+interactors and lock owners. Every accepted edit is validated by the exact
+simulator; every milestone was verified on the official evaluator:
+1029 -> 1030 -> 1033 -> 1035 -> 1036 -> 1038 -> 1039 -> **1041
+(350 + 346 + 345, `solutions/ours/2026-07-03-replay-solver-1041.py`)**.
+Free-space floors (plan with all other robots masked) prove which robots are
+physically convertible; the survivors sit behind multi-robot knots of 2-6
+blockers, each unwound by rebuilding the blockers' days around the gain
+robot's ideal day.
 
 ## Remaining paths toward >1024 (superseded - goal achieved)
 
