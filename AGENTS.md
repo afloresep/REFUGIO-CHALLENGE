@@ -39,6 +39,8 @@ Important measured ablations:
 | Policy | Score | Seed scores | Main lesson |
 | --- | ---: | --- | --- |
 | baseline | 1008 | 337, 336, 335 | public result reproduced |
+| layout canonical racks | 890 | 287, 305, 298 | Team 10 planner alone does not explain 1008 |
+| layout wide avenues | 386 | 123, 120, 143 | naive wide corridors break planner/layout fit |
 | default config only | 1000 | 336, 333, 331 | seed tuning is useful but not the whole jump |
 | no flow penalty | 992 | 334, 330, 328 | soft lane bias matters |
 | no jitter | 1001 | 334, 336, 331 | jitter helps but is not essential |
@@ -71,6 +73,13 @@ Analyze replays:
 ```bash
 npm run analyze:replays
 npm run analyze:replays -- --json
+```
+
+Analyze generated and public layouts:
+
+```bash
+npm run analyze:layouts
+npm run analyze:layouts -- --json
 ```
 
 Analyze a policy statically:
@@ -117,16 +126,13 @@ If imports fail in a future environment, do not guess scores. Document the missi
 
 ## Next Priorities
 
-1. Add layout ablations.
-   Run the Team 10 planner on canonical rack blocks and wide avenues. This separates custom layout value from planner value.
+1. Search layout variants around the Team 10 planner.
+   Preserve short access distances while testing explicit return lanes and base-side balancing. Retune planner flow settings after geometry changes.
 
-2. Add a layout feature analysis script.
-   Compute shelf access counts, average base-entry distances, aisle widths/connectivity, and congestion proxies for public layouts and ablations.
-
-3. Extract more public policies if useful.
+2. Extract more public policies if useful.
    Start with jobs around 930 and 925. Use `npm run fetch:public-code -- <job-id>`.
 
-4. Draft the article from evidence, not vibes.
+3. Draft the article from evidence, not vibes.
    The article should open with the contradiction: an agent claimed 1000 was impossible, but the public best code reproduces 1008 locally on the same seeds.
 
 ## Article Angle
@@ -164,7 +170,6 @@ Make these distinctions explicit:
 
 ## Current Open Questions
 
-- How much of 1008 is layout versus planner when the planner is held fixed?
 - Can a layout with explicit return lanes and base-side balancing beat 1008?
 - Can we create a tighter, correct upper-bound argument that explains why 1008 is possible but still constrains the search?
 - Which part of the external `limit.md` proof first breaks when evaluated against the public best layout and target sequence?

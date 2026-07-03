@@ -116,4 +116,5 @@ The lesson is not that LLMs are useless for optimization. The lesson is that the
 | edge reservations are decisive for throughput | official-seed ablation | done |
 | no-globals ablation drops below 1008 | official-seed ablation | done |
 | `limit.md` impossibility proof is contradicted | official-seed evaluator run | done |
-| custom layout matters quantitatively | simulator experiment | pending |
+| custom layout matters quantitatively | official-seed layout ablation | done |
+| Team 10 layout has stronger shelf access than simple alternatives | layout feature analysis | done |

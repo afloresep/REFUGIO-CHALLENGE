@@ -6,12 +6,34 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const sourcePath = path.join(rootDir, "solutions", "public", "c15da13c3eaa.py");
 const outputDir = path.join(rootDir, "solutions", "ours");
 
+const walkMin = 1;
+const walkMax = 50;
+const shelfCount = 960;
+
 function replaceLine(source, pattern, replacement) {
   if (!pattern.test(source)) {
     throw new Error(`Could not find pattern ${pattern}`);
   }
 
   return source.replace(pattern, replacement);
+}
+
+function replaceCreateLayout(source, shelves) {
+  assertValidShelves(shelves);
+
+  const pattern = /^def create_layout\(\):\n[\s\S]*?\n(?=def _base_entry)/m;
+  if (!pattern.test(source)) {
+    throw new Error("Could not find create_layout block");
+  }
+
+  return source.replace(
+    pattern,
+    [
+      "def create_layout():",
+      `    return {'schema_version': 1, 'shelves': ${JSON.stringify(sortShelves(shelves))}}`,
+      "",
+    ].join("\n"),
+  );
 }
 
 function replaceBlock(source, name, replacement) {
@@ -33,6 +55,123 @@ function withHeader(source, name, hypothesis) {
   ].join("\n");
 }
 
+function cellKey([x, y]) {
+  return `${x},${y}`;
+}
+
+function sortShelves(shelves) {
+  return [...shelves].sort(([ax, ay], [bx, by]) => ay - by || ax - bx);
+}
+
+function neighbors([x, y]) {
+  return [
+    [x + 1, y],
+    [x, y + 1],
+    [x - 1, y],
+    [x, y - 1],
+  ];
+}
+
+function inWalkableArea([x, y]) {
+  return x >= walkMin && x <= walkMax && y >= walkMin && y <= walkMax;
+}
+
+function baseEntryCells() {
+  const entries = [];
+  for (let x = 3; x < 50; x += 2) entries.push([x, 1]);
+  for (let x = 2; x < 49; x += 2) entries.push([x, 50]);
+  for (let y = 2; y < 49; y += 2) entries.push([1, y]);
+  for (let y = 3; y < 50; y += 2) entries.push([50, y]);
+  return entries;
+}
+
+function assertValidShelves(shelves) {
+  if (shelves.length !== shelfCount) {
+    throw new Error(`Expected ${shelfCount} shelves, got ${shelves.length}`);
+  }
+
+  const shelfSet = new Set(shelves.map(cellKey));
+  if (shelfSet.size !== shelves.length) {
+    throw new Error("Generated layout contains duplicate shelf cells");
+  }
+
+  for (const shelf of shelves) {
+    if (!inWalkableArea(shelf)) {
+      throw new Error(`Generated shelf is outside walkable area: ${shelf}`);
+    }
+  }
+
+  const blockedEntry = baseEntryCells().find((entry) => shelfSet.has(cellKey(entry)));
+  if (blockedEntry) {
+    throw new Error(`Generated layout blocks base entry cell: ${blockedEntry}`);
+  }
+
+  const inaccessibleShelf = shelves.find((shelf) =>
+    !neighbors(shelf).some((neighbor) => inWalkableArea(neighbor) && !shelfSet.has(cellKey(neighbor))),
+  );
+  if (inaccessibleShelf) {
+    throw new Error(`Generated shelf has no adjacent pickup cell: ${inaccessibleShelf}`);
+  }
+
+  const walkable = [];
+  const walkableSet = new Set();
+  for (let y = walkMin; y <= walkMax; y += 1) {
+    for (let x = walkMin; x <= walkMax; x += 1) {
+      const key = cellKey([x, y]);
+      if (!shelfSet.has(key)) {
+        walkable.push([x, y]);
+        walkableSet.add(key);
+      }
+    }
+  }
+
+  const queue = [walkable[0]];
+  const seen = new Set([cellKey(walkable[0])]);
+  for (let index = 0; index < queue.length; index += 1) {
+    for (const neighbor of neighbors(queue[index])) {
+      const key = cellKey(neighbor);
+      if (walkableSet.has(key) && !seen.has(key)) {
+        seen.add(key);
+        queue.push(neighbor);
+      }
+    }
+  }
+  if (seen.size !== walkable.length) {
+    throw new Error("Generated layout walkable cells are disconnected");
+  }
+}
+
+function canonicalRackShelves() {
+  const shelves = [];
+  for (let x0 = 3; x0 < 48; x0 += 4) {
+    for (const [y0, y1] of [
+      [3, 12],
+      [15, 24],
+      [27, 36],
+      [39, 48],
+    ]) {
+      for (const x of [x0, x0 + 1]) {
+        for (let y = y0; y <= y1; y += 1) {
+          shelves.push([x, y]);
+        }
+      }
+    }
+  }
+  return sortShelves(shelves);
+}
+
+function wideAvenueShelves() {
+  const shelves = [];
+  for (const x0 of [3, 8, 13, 18, 23, 28, 33, 38, 43, 48]) {
+    for (const x of [x0, x0 + 1]) {
+      for (let y = 2; y <= 49; y += 1) {
+        shelves.push([x, y]);
+      }
+    }
+  }
+  return sortShelves(shelves);
+}
+
 function defaultConfigOnly(source) {
   let next = replaceBlock(source, "SEED_CONFIGS", "SEED_CONFIGS = {}");
   next = replaceBlock(next, "JITTER_CONFIGS", "JITTER_CONFIGS = {}");
@@ -41,6 +180,22 @@ function defaultConfigOnly(source) {
     next,
     "default-config-only",
     "Measure the value of first-target seed fingerprinting and per-seed planner settings.",
+  );
+}
+
+function layoutCanonicalRacks(source) {
+  return withHeader(
+    replaceCreateLayout(source, canonicalRackShelves()),
+    "layout-canonical-racks",
+    "Measure the Team 10 planner on the starter-kit canonical rack layout instead of Team 10's submitted layout.",
+  );
+}
+
+function layoutWideAvenues(source) {
+  return withHeader(
+    replaceCreateLayout(source, wideAvenueShelves()),
+    "layout-wide-avenues",
+    "Measure the Team 10 planner on a simple 10-strip layout with wide vertical avenues.",
   );
 }
 
@@ -215,6 +370,8 @@ function noSharedBrainCachedWorld(source) {
 
 const variants = [
   ["c15da13c3eaa-default-config-only.py", defaultConfigOnly],
+  ["c15da13c3eaa-layout-canonical-racks.py", layoutCanonicalRacks],
+  ["c15da13c3eaa-layout-wide-avenues.py", layoutWideAvenues],
   ["c15da13c3eaa-no-edge-reservations.py", noEdgeReservations],
   ["c15da13c3eaa-no-flow-penalty.py", noFlowPenalty],
   ["c15da13c3eaa-no-jitter.py", noJitter],

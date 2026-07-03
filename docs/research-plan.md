@@ -94,4 +94,6 @@ When the simulator is available, every numeric claim in the writeup should point
 - [x] Add no-shared-brain ablations.
 - [x] Review external `limit.md` 1000-impossible argument.
 - [x] Add no-edge-reservation ablation.
-- [ ] Add layout ablations.
+- [x] Add layout ablations.
+- [x] Add layout feature analysis script.
+- [ ] Search layout variants around the Team 10 planner.

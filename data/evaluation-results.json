@@ -20,6 +20,26 @@
       "policy_time_seconds": 11.921435
     },
     {
+      "policy": "solutions/ours/c15da13c3eaa-layout-canonical-racks.py",
+      "label": "c15da13c3eaa-layout-canonical-racks",
+      "score": 890,
+      "seed_scores": [287, 305, 298],
+      "delta_vs_baseline": -118,
+      "blocked_moves": 34,
+      "remaining_distance": 6734,
+      "policy_time_seconds": 14.880914
+    },
+    {
+      "policy": "solutions/ours/c15da13c3eaa-layout-wide-avenues.py",
+      "label": "c15da13c3eaa-layout-wide-avenues",
+      "score": 386,
+      "seed_scores": [123, 120, 143],
+      "delta_vs_baseline": -622,
+      "blocked_moves": 7741,
+      "remaining_distance": 7498,
+      "policy_time_seconds": 60.754681
+    },
+    {
       "policy": "solutions/ours/c15da13c3eaa-default-config-only.py",
       "label": "c15da13c3eaa-default-config-only",
       "score": 1000,

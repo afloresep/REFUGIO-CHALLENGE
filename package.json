@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "analyze:policy": "node scripts/analyze-policy.mjs",
+    "analyze:layouts": "node scripts/analyze-layouts.mjs",
     "analyze:replays": "node scripts/analyze-replays.mjs",
     "eval:policy": "node scripts/run-evaluation.mjs",
     "fetch:public-code": "node scripts/fetch-public-code.mjs",
