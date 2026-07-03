@@ -688,6 +688,22 @@
    "remaining_distance": 12287,
    "policy_time_seconds": 0.021037,
    "notes": "replay-matrix policy: dead-tail stripping (88-94 robots/seed) + lock-aware day-compression sweep converts bff0 rid 7 and 92, 546a rid 82; beats 1026 by 3"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1030)",
+   "label": "2026-07-03-replay-solver-1030",
+   "score": 1030,
+   "seed_scores": [
+    347,
+    343,
+    340
+   ],
+   "delta_vs_baseline": 22,
+   "delta_vs_1024": 6,
+   "blocked_moves": 0,
+   "remaining_distance": 12306,
+   "policy_time_seconds": 0.020228,
+   "notes": "pair repair (leave-one-out blocker identification) converts dfbf rid 38 by rebuilding blocker rid 80 around its ideal day; 1030 = 347+343+340"
   }
  ]
 }

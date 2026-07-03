@@ -243,6 +243,37 @@ scores 1026 = 345 + 342 + 339 on the official seeds, beating 1025.**
 Remaining headroom for the article: lock-aware pickup floors for rejected
 conversions and multi-robot replay edits that preserve shelf-lock ordering.
 
+## Dead-tail stripping + lock-aware sweeps: 1029
+
+Two mechanisms extend the replay-edit toolbox past hand-picked conversions:
+
+1. **Dead-tail stripping** (`strip_tails.py`). Everything a robot does after
+   its final successful drop delivers nothing - it is residual traffic from
+   the reactive planner chasing targets it never completed. Because frozen
+   robots' recorded actions never depend on being blocked (blocked actions
+   were extracted as waits), removing this traffic is collateral-free by
+   construction. 88-94 of 96 robots per seed carry such tails; stripping
+   them leaves totals exactly unchanged (simulator-verified).
+2. **Lock-aware day compression** (`sweep_compress.py`). The exact shelf-lock
+   semantics are computable offline from the matrix rows: a shelf is locked
+   while any robot carries an item drawn from it, and same-tick pickups go to
+   the lowest robot id. The rebuilt robot must neither pick during another
+   lock (it would desync itself) nor hold a lock across a frozen robot's
+   recorded pickup (it would desync them); both constraints become time
+   floors in an earliest-arrival A* per trip leg, with per-pickup-cell
+   optimization of the drop tick.
+
+Against the thinned traffic field, the sweep converted bff0 rid 7 (4 -> 5)
+and rid 92 (3 -> 4; its optimal day had been blocked by a single frozen
+transit through its entry cell at tick 229), and 546a rid 82 (2 -> 3):
+**1029 = 347 + 342 + 340**, verified on the official evaluator
+(`solutions/ours/2026-07-03-replay-solver-1029.py`).
+
+A global left-compaction pass (`compact_all.py`, 70-84 accepted same-count
+rebuilds per seed) plus re-sweeps found no further single-robot conversions;
+the nearest misses (dfbf rid 38/41 at +1 tick, others at +2/+3) motivate
+leave-one-out pair repair (`pair_repair.py`).
+
 ## Verdict (superseded twice)
 
 The live-planner verdict was superseded by replay-matrix policies. Current

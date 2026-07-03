@@ -178,6 +178,43 @@ def pickup_cells(shelf, blocked):
     }
 
 
+def plan_trip(pos, blocked, locks, rid, entry, target, p_cell, t0, cell0):
+    """Best (t_p, t_d, chars) for one trip via a fixed pickup cell, or None.
+
+    Minimizes drop tick under lock legality, steal avoidance, and stationary
+    conflicts at the pickup cell and the entry.
+    """
+    floor = 0
+    for _attempt in range(24):
+        res = earliest_astar(pos, blocked, rid, t0, cell0, {p_cell}, floor=floor)
+        if res is None:
+            return None
+        t_p, _, chars = res
+        if not locks.pick_ok(target, t_p) or not stationary_ok(pos, rid, p_cell, t_p + 1):
+            floor = t_p + 1
+            continue
+        back_floor = 0
+        for _back_attempt in range(8):
+            back = earliest_astar(pos, blocked, rid, t_p + 1, p_cell, {entry}, floor=back_floor)
+            if back is None:
+                return None
+            t_d, _, back_chars = back
+            if t_d > TICKS - 1:
+                return None
+            if not stationary_ok(pos, rid, entry, t_d + 1):
+                back_floor = t_d + 1  # arrive later; pickup stays put
+                continue
+            break
+        else:
+            return None
+        stolen = locks.steal_conflict(target, t_p, t_d)
+        if stolen is not None:
+            floor = stolen + 1  # pick after the frozen robot instead
+            continue
+        return t_p, t_d, chars + ["P"] + back_chars + ["O"]
+    return None
+
+
 def build_row(data, pos, rid, trips_target) -> str | None:
     seed = data["seed"]
     shelves = L.sorted_shelves([tuple(c) for c in data["shelves"]])
@@ -192,34 +229,15 @@ def build_row(data, pos, rid, trips_target) -> str | None:
         goals = pickup_cells(target, blocked)
         if not goals:
             return None
-        floor = 0
-        for _attempt in range(24):
-            res = earliest_astar(pos, blocked, rid, t, cell, goals, floor=floor)
-            if res is None:
-                return None
-            t_p, p_cell, chars = res
-            # P at t_p: lock-legal and physically unobstructed next tick
-            if not locks.pick_ok(target, t_p) or not stationary_ok(pos, rid, p_cell, t_p + 1):
-                floor = t_p + 1
-                continue
-            back = earliest_astar(pos, blocked, rid, t_p + 1, p_cell, {entry})
-            if back is None:
-                return None
-            t_d, _, back_chars = back
-            if t_d > TICKS - 1:
-                return None
-            stolen = locks.steal_conflict(target, t_p, t_d)
-            if stolen is not None:
-                floor = stolen + 1  # pick after the frozen robot instead
-                continue
-            if not stationary_ok(pos, rid, entry, t_d + 1):
-                floor = t_p + 1
-                continue
-            row += chars + ["P"] + back_chars + ["O"]
-            t, cell = t_d + 1, entry
-            break
-        else:
+        options = [
+            plan for p_cell in goals
+            if (plan := plan_trip(pos, blocked, locks, rid, entry, target, p_cell, t, cell))
+        ]
+        if not options:
             return None
+        _, t_d, trip_chars = min(options, key=lambda o: (o[1], o[0]))
+        row += trip_chars
+        t, cell = t_d + 1, entry
     # park: W if the entry stays clear, else wander
     if all(stationary_ok(pos, rid, cell, tt) for tt in range(t, TICKS + 1)):
         row += ["W"] * (TICKS - t)
