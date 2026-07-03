@@ -720,6 +720,22 @@
    "remaining_distance": 12308,
    "policy_time_seconds": 0.019935,
    "notes": "multi-mask + victim-cascade joint edits: bff0 rid 69 (blockers 0,71 detoured with wander parking), dfbf rid 38 (blocker 80), 546a rid 45 (blocker 21) and rid 59 (masks 54,60); 1033 = 348+343+342"
+  },
+  {
+   "policy": "generated: scripts/layout_search (label 2026-07-03-replay-solver-1035)",
+   "label": "2026-07-03-replay-solver-1035",
+   "score": 1035,
+   "seed_scores": [
+    349,
+    344,
+    342
+   ],
+   "delta_vs_baseline": 27,
+   "delta_vs_1024": 11,
+   "blocked_moves": 0,
+   "remaining_distance": 12245,
+   "policy_time_seconds": 0.019486,
+   "notes": "joint_repair suffix-rebuild cascade converts dfbf rid 41 (masks 17,43) and bff0 rid 1 (masks 9,84,29); 1035 = 349+344+342"
   }
  ]
 }
