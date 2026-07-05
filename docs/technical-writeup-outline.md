@@ -4,7 +4,7 @@ Working title: `Why 920 Was Not the Ceiling`
 
 ## Thesis
 
-The apparent 920-ish ceiling came from analyzing a different problem than the one the evaluator actually rewarded. A memoryless, decentralized, generic warehouse policy may plateau around that region, but the public best result used a custom layout, shared module state, time-expanded cooperative planning, and seed-specific tuning to reach 1008 raw deliveries. A local closed-gate continuation of the same family reaches 1024 by retuning the planner and adding audited late-game fixes.
+The apparent 920-ish ceiling came from analyzing a different problem than the one the evaluator actually rewarded. A memoryless, decentralized, generic warehouse policy may plateau around that region, but the public best result used a custom layout, shared module state, time-expanded cooperative planning, and seed-specific tuning to reach 1008 raw deliveries. The public data shows that sharing did transmit copyable artifacts, especially layouts, but the final discontinuity came from an unspoken explanation of the artifact: the hidden-seed demand stream is a row-major shelf-index assignment problem. A local closed-gate continuation of the same family reaches 1024 by retuning the planner and adding audited late-game fixes, and replay-matrix policies reach 1042.
 
 ## Structure
 
@@ -28,11 +28,15 @@ Evidence:
 - 931 deliveries won the points table.
 - 1008 deliveries was the highest public raw score.
 - Local replay files show one run, not the three-seed aggregate.
+- Public sharing was not inert: exact layouts diffused heavily, while exact code copying was rare.
+- The Team 10 930 layout spread to six teams and produced the winning 931-point submission, but Team 10's 1008 layout arrived too late and stayed unique.
 
 Evidence:
 
 - `data/public-leaderboard-snapshot.json`
+- `data/public-job-layout-analysis.json`
 - `npm run analyze:replays`
+- `npm run analyze:public-jobs`
 
 ### 3. What We Did Wrong
 
@@ -124,3 +128,7 @@ The lesson is not that LLMs are useless for optimization. The lesson is that the
 | removing all 1024 helper mechanisms leaves a 1009 clean planner floor | official-seed ablation | done |
 | 1024 clean floor depends on seed-config and jitter interactions | official-seed ablation | done |
 | 1021 no-forced planner does not rescue simple alternate layouts | official-seed layout ablation | done |
+| exact public layouts diffused far more than exact code | public job/replay/code analysis | done |
+| Team 10's 930 layout propagated to six teams, but 1008 stayed unique | public layout diffusion analysis | done |
+| Team 10 13:27 planner plus final layout scores 999-1000 | layout-swap counterfactual | done |
+| Team 10 final planner plus 13:27 layout scores 922-924 | layout-swap counterfactual | done |

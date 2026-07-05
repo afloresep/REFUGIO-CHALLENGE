@@ -816,6 +816,96 @@
    "remaining_distance": 12297,
    "policy_time_seconds": 0.019576,
    "notes": "ideal-corridor + lock-owner candidates crack 546a rid 42 (seven-robot core 17,46,47,70,81,84,91); 1042 = 350+346+346"
+  },
+  {
+   "policy": "solutions/public/c31ff1c81105.py",
+   "label": "team10-930-public",
+   "score": 930,
+   "seed_scores": [
+    306,
+    318,
+    306
+   ],
+   "delta_vs_baseline": -78,
+   "blocked_moves": 16,
+   "remaining_distance": 7350,
+   "policy_time_seconds": 11.679967,
+   "notes": "Team 10 13:27 public submission; baseline for 2026-07-05 layout-swap counterfactual."
+  },
+  {
+   "policy": "solutions/public/c15da13c3eaa.py",
+   "label": "team10-1008-public-rerun",
+   "score": 1008,
+   "seed_scores": [
+    337,
+    336,
+    335
+   ],
+   "delta_vs_baseline": 0,
+   "blocked_moves": 4,
+   "remaining_distance": 6566,
+   "policy_time_seconds": 12.558065,
+   "notes": "Rerun of Team 10 final public submission for the 2026-07-05 layout-swap counterfactual."
+  },
+  {
+   "policy": "solutions/ours/2026-07-05-team10-930-planner-with-1008-layout.py",
+   "label": "team10-930-planner-1008-layout",
+   "score": 1000,
+   "seed_scores": [
+    336,
+    333,
+    331
+   ],
+   "delta_vs_baseline": -8,
+   "blocked_moves": 3,
+   "remaining_distance": 6478,
+   "policy_time_seconds": 13.279399,
+   "notes": "13:27 Team 10 planner/configs with final 1008 literal layout; seed signatures not remapped."
+  },
+  {
+   "policy": "solutions/ours/2026-07-05-team10-930-planner-with-1008-layout-remapped-config.py",
+   "label": "team10-930-planner-1008-layout-remap",
+   "score": 999,
+   "seed_scores": [
+    334,
+    333,
+    332
+   ],
+   "delta_vs_baseline": -9,
+   "blocked_moves": 2,
+   "remaining_distance": 6277,
+   "policy_time_seconds": 12.523745,
+   "notes": "13:27 Team 10 planner/config values with final 1008 layout and seed-signature keys remapped."
+  },
+  {
+   "policy": "solutions/ours/2026-07-05-team10-1008-planner-with-930-layout.py",
+   "label": "team10-1008-planner-930-layout",
+   "score": 922,
+   "seed_scores": [
+    302,
+    315,
+    305
+   ],
+   "delta_vs_baseline": -86,
+   "blocked_moves": 12,
+   "remaining_distance": 7008,
+   "policy_time_seconds": 11.809909,
+   "notes": "Final Team 10 planner/configs with 13:27 procedural layout; seed signatures not remapped."
+  },
+  {
+   "policy": "solutions/ours/2026-07-05-team10-1008-planner-with-930-layout-remapped-config.py",
+   "label": "team10-1008-planner-930-layout-remap",
+   "score": 924,
+   "seed_scores": [
+    304,
+    317,
+    303
+   ],
+   "delta_vs_baseline": -84,
+   "blocked_moves": 10,
+   "remaining_distance": 6920,
+   "policy_time_seconds": 11.502853,
+   "notes": "Final Team 10 planner/config values with 13:27 layout and seed-signature keys remapped."
   }
  ]
 }

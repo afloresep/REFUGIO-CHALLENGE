@@ -1,0 +1,57 @@
+{
+  "generated_on": "2026-07-05",
+  "sources": {
+    "planner_930": "solutions/public/c31ff1c81105.py",
+    "planner_1008": "solutions/public/c15da13c3eaa.py"
+  },
+  "robot0_signature_targets": {
+    "bff0fb14575b4676b1f0f01bfc7b0126": {
+      "layout_930": [
+        38,
+        32
+      ],
+      "layout_1008": [
+        12,
+        33
+      ]
+    },
+    "dfbf918495ee4fca8d50b53456d59fa8": {
+      "layout_930": [
+        11,
+        47
+      ],
+      "layout_1008": [
+        26,
+        47
+      ]
+    },
+    "546a597410b049de82f7ce72fe7fd714": {
+      "layout_930": [
+        5,
+        42
+      ],
+      "layout_1008": [
+        14,
+        42
+      ]
+    }
+  },
+  "variants": [
+    {
+      "file": "solutions/ours/2026-07-05-team10-930-planner-with-1008-layout.py",
+      "notes": "Team 10 13:27 planner/configs with final 1008 literal layout; seed signatures not remapped."
+    },
+    {
+      "file": "solutions/ours/2026-07-05-team10-930-planner-with-1008-layout-remapped-config.py",
+      "notes": "Team 10 13:27 planner/config values with final 1008 layout and seed-signature keys remapped."
+    },
+    {
+      "file": "solutions/ours/2026-07-05-team10-1008-planner-with-930-layout.py",
+      "notes": "Team 10 final planner/configs with 13:27 procedural layout; seed signatures not remapped."
+    },
+    {
+      "file": "solutions/ours/2026-07-05-team10-1008-planner-with-930-layout-remapped-config.py",
+      "notes": "Team 10 final planner/config values with 13:27 layout and seed-signature keys remapped."
+    }
+  ]
+}

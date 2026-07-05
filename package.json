@@ -6,6 +6,7 @@
     "analyze:policy": "node scripts/analyze-policy.mjs",
     "analyze:layouts": "node scripts/analyze-layouts.mjs",
     "analyze:replays": "node scripts/analyze-replays.mjs",
+    "analyze:public-jobs": "node scripts/analyze-public-jobs.mjs",
     "eval:policy": "node scripts/run-evaluation.mjs",
     "fetch:public-code": "node scripts/fetch-public-code.mjs",
     "make:ablations": "node scripts/create-ablation-variants.mjs",

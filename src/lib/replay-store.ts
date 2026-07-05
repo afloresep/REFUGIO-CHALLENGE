@@ -8,6 +8,7 @@ export const localReplayIds = [
   "3905ff4f9ead",
   "7a4738c9956c",
   "1b294895f546",
+  "202607021024",
 ] as const;
 
 export type LocalReplayId = typeof localReplayIds[number];

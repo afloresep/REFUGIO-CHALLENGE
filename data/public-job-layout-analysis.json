@@ -1,0 +1,1738 @@
+{
+  "source": {
+    "jobs_html": "/tmp/refugio-jobs.html",
+    "replay_html_dir": "/tmp/refugio-analysis/replay-html",
+    "code_dir": "/tmp/refugio-analysis/code-py"
+  },
+  "totals": {
+    "jobs": 93,
+    "succeeded": 86,
+    "safety_rejected": 7,
+    "unique_layouts": 20
+  },
+  "frontier_changes": [
+    {
+      "job": "ecc405f020bd",
+      "team": "Equipo 16",
+      "status": "succeeded",
+      "points": 0,
+      "deliveries": 24,
+      "runtime_seconds": 0.5,
+      "submitted": "2026-06-27 10:06:49.794 UTC",
+      "committed": "2026-06-27 10:07:04.869 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "38e46b857d29ef25a17986f5944abe94b598081fea5505691dd4d841592d3bec",
+      "code_lines": 154,
+      "has_brain": false,
+      "has_astar": false,
+      "has_edge_reservations": false,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 0,
+      "frontier_delta": 24
+    },
+    {
+      "job": "15c4cc5a483b",
+      "team": "Equipo 04",
+      "status": "succeeded",
+      "points": 36315,
+      "deliveries": 369,
+      "runtime_seconds": 57.1,
+      "submitted": "2026-06-27 10:07:34.565 UTC",
+      "committed": "2026-06-27 10:08:47.724 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "6e1f9095cdba838144bb96cc24b40c72023df119388ef129baf9f0a4f3ed762e",
+      "code_lines": 224,
+      "has_brain": false,
+      "has_astar": false,
+      "has_edge_reservations": false,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 24,
+      "frontier_delta": 345
+    },
+    {
+      "job": "ce08283218fa",
+      "team": "Equipo 10",
+      "status": "succeeded",
+      "points": 7938,
+      "deliveries": 397,
+      "runtime_seconds": 21.68,
+      "submitted": "2026-06-27 10:19:11.162 UTC",
+      "committed": "2026-06-27 10:19:45.098 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "2d38613a04eb22f1245d06631cebf20b65bba66e201e29894fcf5aca16999012",
+      "code_lines": 155,
+      "has_brain": false,
+      "has_astar": false,
+      "has_edge_reservations": false,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 369,
+      "frontier_delta": 28
+    },
+    {
+      "job": "8cb6baa8def4",
+      "team": "Equipo 09",
+      "status": "succeeded",
+      "points": 298,
+      "deliveries": 398,
+      "runtime_seconds": 29.1,
+      "submitted": "2026-06-27 10:19:13.935 UTC",
+      "committed": "2026-06-27 10:19:57.305 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "78f98da70ea5fef5f3a48e5b7ccee1817b56da3d229512894ab319bab1a9296e",
+      "code_lines": 217,
+      "has_brain": false,
+      "has_astar": false,
+      "has_edge_reservations": false,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 397,
+      "frontier_delta": 1
+    },
+    {
+      "job": "9c8ddcffc4f3",
+      "team": "Equipo 03",
+      "status": "succeeded",
+      "points": 85754,
+      "deliveries": 610,
+      "runtime_seconds": 1.41,
+      "submitted": "2026-06-27 10:22:34.003 UTC",
+      "committed": "2026-06-27 10:22:51.498 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "a3cdea10d7ef69dea55772a94a1e45ff27a26876729b0dd3a1230eed4f38f12d",
+      "code_lines": 181,
+      "has_brain": false,
+      "has_astar": false,
+      "has_edge_reservations": false,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 398,
+      "frontier_delta": 212
+    },
+    {
+      "job": "e8ad7754c58a",
+      "team": "Equipo 08",
+      "status": "succeeded",
+      "points": 87165,
+      "deliveries": 759,
+      "runtime_seconds": 1.4,
+      "submitted": "2026-06-27 10:29:25.769 UTC",
+      "committed": "2026-06-27 10:29:39.760 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "c1b3c61efdfc52a7c44746a134921796063a5f63a73527352ebb13b47b68bd65",
+      "code_lines": 211,
+      "has_brain": false,
+      "has_astar": false,
+      "has_edge_reservations": false,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 610,
+      "frontier_delta": 149
+    },
+    {
+      "job": "1b294895f546",
+      "team": "Equipo 02",
+      "status": "succeeded",
+      "points": 88683,
+      "deliveries": 882,
+      "runtime_seconds": 15.73,
+      "submitted": "2026-06-27 10:31:37.990 UTC",
+      "committed": "2026-06-27 10:32:07.465 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "0145c7da6a348e0aa30f020a0b77530a479ea1b1135d05a7c3d5db3a1b1e953d",
+      "code_lines": 484,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 759,
+      "frontier_delta": 123
+    },
+    {
+      "job": "516d288495df",
+      "team": "Equipo 09",
+      "status": "succeeded",
+      "points": 783,
+      "deliveries": 883,
+      "runtime_seconds": 16.56,
+      "submitted": "2026-06-27 10:58:44.267 UTC",
+      "committed": "2026-06-27 10:59:16.025 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "4d25dc098cb010c809427b65f2efa23da159762eeb698a4de3b8a48699fac9cd",
+      "code_lines": 487,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 882,
+      "frontier_delta": 1
+    },
+    {
+      "job": "f692704ea634",
+      "team": "Equipo 02",
+      "status": "succeeded",
+      "points": 784,
+      "deliveries": 884,
+      "runtime_seconds": 16.56,
+      "submitted": "2026-06-27 11:02:40.292 UTC",
+      "committed": "2026-06-27 11:03:10.152 UTC",
+      "replay_layout_hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "replay_shelf_count": 960,
+      "code_sha": "f02d824e6c0f7107c573d8cd54bda2965a9c15fe163d878b14ee5870295ae700",
+      "code_lines": 506,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 883,
+      "frontier_delta": 1
+    },
+    {
+      "job": "7dd5b6c2a2bf",
+      "team": "Equipo 03",
+      "status": "succeeded",
+      "points": 3146,
+      "deliveries": 888,
+      "runtime_seconds": 16.88,
+      "submitted": "2026-06-27 11:07:30.940 UTC",
+      "committed": "2026-06-27 11:08:00.784 UTC",
+      "replay_layout_hash": "b08f06ef090b601d9f3911891a13def10d8a9a295b185a26201ad738d401fddd",
+      "replay_shelf_count": 960,
+      "code_sha": "492b190628faab8c3653c2c2fa6f15c4d3f21f54e49b370d5bff94f4a56af4a1",
+      "code_lines": 604,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 884,
+      "frontier_delta": 4
+    },
+    {
+      "job": "ba833bb4d9ea",
+      "team": "Equipo 16",
+      "status": "succeeded",
+      "points": 5544,
+      "deliveries": 895,
+      "runtime_seconds": 16.54,
+      "submitted": "2026-06-27 11:24:39.916 UTC",
+      "committed": "2026-06-27 11:25:08.794 UTC",
+      "replay_layout_hash": "b08f06ef090b601d9f3911891a13def10d8a9a295b185a26201ad738d401fddd",
+      "replay_shelf_count": 960,
+      "code_sha": "b2cffe8fc46cad7aab57ad8d391fe6f3ff4c6e74e156dd4ea8b20bf16c420367",
+      "code_lines": 656,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 888,
+      "frontier_delta": 7
+    },
+    {
+      "job": "96f62c7fdaa8",
+      "team": "Equipo 16",
+      "status": "succeeded",
+      "points": 1593,
+      "deliveries": 897,
+      "runtime_seconds": 11.46,
+      "submitted": "2026-06-27 12:01:54.009 UTC",
+      "committed": "2026-06-27 12:02:20.932 UTC",
+      "replay_layout_hash": "b08f06ef090b601d9f3911891a13def10d8a9a295b185a26201ad738d401fddd",
+      "replay_shelf_count": 960,
+      "code_sha": "99fbe67f037c54e1228f25951766ef2c664e8ca0dba6bf60bf8e508d9b38b5a1",
+      "code_lines": 807,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 895,
+      "frontier_delta": 2
+    },
+    {
+      "job": "d6ef1065be31",
+      "team": "Equipo 06",
+      "status": "succeeded",
+      "points": 798,
+      "deliveries": 898,
+      "runtime_seconds": 10.79,
+      "submitted": "2026-06-27 12:19:16.226 UTC",
+      "committed": "2026-06-27 12:19:41.758 UTC",
+      "replay_layout_hash": "5083ae7c04c1b63a87c08ad4db35e0b2f8bd18cb09aa0f166fa91e6f108bd5c1",
+      "replay_shelf_count": 960,
+      "code_sha": "1da9032d114465f8d26cdb1c0fbbc0629b6ed35ea9a52857eb6ce013e73101e9",
+      "code_lines": 819,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 897,
+      "frontier_delta": 1
+    },
+    {
+      "job": "7a4738c9956c",
+      "team": "Equipo 04",
+      "status": "succeeded",
+      "points": 7227,
+      "deliveries": 907,
+      "runtime_seconds": 21.93,
+      "submitted": "2026-06-27 12:23:10.721 UTC",
+      "committed": "2026-06-27 12:23:46.817 UTC",
+      "replay_layout_hash": "1773c3a3796b1bd18e104faac1f891de72ee01544407291f5d1de2ca947fb27f",
+      "replay_shelf_count": 960,
+      "code_sha": "27494872ac53d83363e7cc1047fa3da318d4232b7c8b74da6b7c63a9051783b2",
+      "code_lines": 333,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 898,
+      "frontier_delta": 9
+    },
+    {
+      "job": "7b2dfd229091",
+      "team": "Equipo 03",
+      "status": "succeeded",
+      "points": 1617,
+      "deliveries": 909,
+      "runtime_seconds": 14.92,
+      "submitted": "2026-06-27 12:47:28.194 UTC",
+      "committed": "2026-06-27 12:47:57.429 UTC",
+      "replay_layout_hash": "1773c3a3796b1bd18e104faac1f891de72ee01544407291f5d1de2ca947fb27f",
+      "replay_shelf_count": 960,
+      "code_sha": "b0d3a681e89184593117c4bf86e74bff77bf51ec14653b49e9575e37158a3940",
+      "code_lines": 463,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": false,
+      "has_literal_layout": false,
+      "previous_frontier": 907,
+      "frontier_delta": 2
+    },
+    {
+      "job": "a99d84c43de0",
+      "team": "Equipo 10",
+      "status": "succeeded",
+      "points": 11431,
+      "deliveries": 923,
+      "runtime_seconds": 32.99,
+      "submitted": "2026-06-27 12:56:10.086 UTC",
+      "committed": "2026-06-27 12:57:03.695 UTC",
+      "replay_layout_hash": "1773c3a3796b1bd18e104faac1f891de72ee01544407291f5d1de2ca947fb27f",
+      "replay_shelf_count": 960,
+      "code_sha": "2fdefd98b62a8596a9d601b664ba1af29bdae73cf64f88fb35e012ca270e9f03",
+      "code_lines": 353,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": true,
+      "has_literal_layout": false,
+      "previous_frontier": 909,
+      "frontier_delta": 14
+    },
+    {
+      "job": "a591827df228",
+      "team": "Equipo 03",
+      "status": "succeeded",
+      "points": 824,
+      "deliveries": 924,
+      "runtime_seconds": 16.28,
+      "submitted": "2026-06-27 13:18:03.982 UTC",
+      "committed": "2026-06-27 13:18:32.499 UTC",
+      "replay_layout_hash": "1773c3a3796b1bd18e104faac1f891de72ee01544407291f5d1de2ca947fb27f",
+      "replay_shelf_count": 960,
+      "code_sha": "a147daaf4fc9b9475cec3817edbe98bec3c4dc25032e92566ee3504c9709d63d",
+      "code_lines": 482,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": true,
+      "has_literal_layout": false,
+      "previous_frontier": 923,
+      "frontier_delta": 1
+    },
+    {
+      "job": "c31ff1c81105",
+      "team": "Equipo 10",
+      "status": "succeeded",
+      "points": 4965,
+      "deliveries": 930,
+      "runtime_seconds": 17.89,
+      "submitted": "2026-06-27 13:27:11.092 UTC",
+      "committed": "2026-06-27 13:27:41.188 UTC",
+      "replay_layout_hash": "d1da390a97edadfd28b1777145d691c2b85e71a576e167d3ebe40429efd53655",
+      "replay_shelf_count": 960,
+      "code_sha": "ab1ddf520a3019c9d4473a3a35ad574f0815c9d44ac417533fbf98e2a96b17c5",
+      "code_lines": 362,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": true,
+      "has_literal_layout": false,
+      "previous_frontier": 924,
+      "frontier_delta": 6
+    },
+    {
+      "job": "3905ff4f9ead",
+      "team": "Equipo 03",
+      "status": "succeeded",
+      "points": 831,
+      "deliveries": 931,
+      "runtime_seconds": 11.96,
+      "submitted": "2026-06-27 13:48:38.988 UTC",
+      "committed": "2026-06-27 13:49:06.668 UTC",
+      "replay_layout_hash": "d1da390a97edadfd28b1777145d691c2b85e71a576e167d3ebe40429efd53655",
+      "replay_shelf_count": 960,
+      "code_sha": "6069d3bfaa19873130d1d7a336973776d465081e2274b9b2085e68ce8a7d282c",
+      "code_lines": 491,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": true,
+      "has_literal_layout": false,
+      "previous_frontier": 930,
+      "frontier_delta": 1
+    },
+    {
+      "job": "c15da13c3eaa",
+      "team": "Equipo 10",
+      "status": "succeeded",
+      "points": 66990,
+      "deliveries": 1008,
+      "runtime_seconds": 19.31,
+      "submitted": "2026-06-27 13:57:51.174 UTC",
+      "committed": "2026-06-27 13:58:21.932 UTC",
+      "replay_layout_hash": "9859eb7327776867a8438096b43ee5cb74ecfffe0aaf498e179853341376c46d",
+      "replay_shelf_count": 960,
+      "code_sha": "224053d644afc2fef31e97ec93c11930794aec579c21c4da95390cab1080fb84",
+      "code_lines": 339,
+      "has_brain": true,
+      "has_astar": true,
+      "has_edge_reservations": true,
+      "has_seed_config": true,
+      "has_literal_layout": true,
+      "previous_frontier": 931,
+      "frontier_delta": 77
+    }
+  ],
+  "teams": [
+    {
+      "team": "Equipo 10",
+      "submissions": 8,
+      "first_submitted": "2026-06-27 10:19:11.162 UTC",
+      "last_submitted": "2026-06-27 13:57:51.174 UTC",
+      "best_deliveries": 1008,
+      "best_job": "c15da13c3eaa",
+      "final_deliveries": 1008,
+      "points": 91324,
+      "scores": [
+        397,
+        759,
+        866,
+        888,
+        896,
+        923,
+        930,
+        1008
+      ]
+    },
+    {
+      "team": "Equipo 03",
+      "submissions": 7,
+      "first_submitted": "2026-06-27 10:22:34.003 UTC",
+      "last_submitted": "2026-06-27 13:48:38.988 UTC",
+      "best_deliveries": 931,
+      "best_job": "3905ff4f9ead",
+      "final_deliveries": 931,
+      "points": 92172,
+      "scores": [
+        610,
+        888,
+        888,
+        897,
+        909,
+        924,
+        931
+      ]
+    },
+    {
+      "team": "Equipo 08",
+      "submissions": 6,
+      "first_submitted": "2026-06-27 10:29:25.769 UTC",
+      "last_submitted": "2026-06-27 13:55:10.580 UTC",
+      "best_deliveries": 930,
+      "best_job": "d9d5e50cbd41",
+      "final_deliveries": 930,
+      "points": 87165,
+      "scores": [
+        759,
+        888,
+        895,
+        890,
+        904,
+        930
+      ]
+    },
+    {
+      "team": "Equipo 12",
+      "submissions": 5,
+      "first_submitted": "2026-06-27 11:26:01.833 UTC",
+      "last_submitted": "2026-06-27 13:55:10.493 UTC",
+      "best_deliveries": 930,
+      "best_job": "9b2617f16f38",
+      "final_deliveries": 930,
+      "points": 0,
+      "scores": [
+        860,
+        890,
+        893,
+        877,
+        930
+      ]
+    },
+    {
+      "team": "Equipo 05",
+      "submissions": 6,
+      "first_submitted": "2026-06-27 10:33:30.429 UTC",
+      "last_submitted": "2026-06-27 13:57:29.837 UTC",
+      "best_deliveries": 925,
+      "best_job": "9f6e36d64061",
+      "final_deliveries": 925,
+      "points": 0,
+      "scores": [
+        783,
+        881,
+        892,
+        897,
+        909,
+        925
+      ]
+    },
+    {
+      "team": "Equipo 13",
+      "submissions": 5,
+      "first_submitted": "2026-06-27 10:25:48.864 UTC",
+      "last_submitted": "2026-06-27 13:38:37.465 UTC",
+      "best_deliveries": 918,
+      "best_job": "d3f597c7ceaa",
+      "final_deliveries": 918,
+      "points": 0,
+      "scores": [
+        548,
+        831,
+        892,
+        892,
+        918
+      ]
+    },
+    {
+      "team": "Equipo 02",
+      "submissions": 7,
+      "first_submitted": "2026-06-27 10:31:37.990 UTC",
+      "last_submitted": "2026-06-27 13:56:44.847 UTC",
+      "best_deliveries": 917,
+      "best_job": "2be229bd1d04",
+      "final_deliveries": 886,
+      "points": 89467,
+      "scores": [
+        882,
+        884,
+        890,
+        896,
+        895,
+        917,
+        886
+      ]
+    },
+    {
+      "team": "Equipo 01",
+      "submissions": 3,
+      "first_submitted": "2026-06-27 10:44:40.437 UTC",
+      "last_submitted": "2026-06-27 13:33:35.975 UTC",
+      "best_deliveries": 908,
+      "best_job": "57aeeedbf2ae",
+      "final_deliveries": 908,
+      "points": 0,
+      "scores": [
+        882,
+        877,
+        908
+      ]
+    },
+    {
+      "team": "Equipo 04",
+      "submissions": 5,
+      "first_submitted": "2026-06-27 10:07:34.565 UTC",
+      "last_submitted": "2026-06-27 12:23:10.721 UTC",
+      "best_deliveries": 907,
+      "best_job": "7a4738c9956c",
+      "final_deliveries": 907,
+      "points": 43542,
+      "scores": [
+        369,
+        879,
+        888,
+        749,
+        907
+      ]
+    },
+    {
+      "team": "Equipo 06",
+      "submissions": 5,
+      "first_submitted": "2026-06-27 10:29:39.819 UTC",
+      "last_submitted": "2026-06-27 13:56:54.375 UTC",
+      "best_deliveries": 901,
+      "best_job": "03a1a666dba7",
+      "final_deliveries": 901,
+      "points": 798,
+      "scores": [
+        730,
+        888,
+        894,
+        898,
+        901
+      ]
+    },
+    {
+      "team": "Equipo 09",
+      "submissions": 6,
+      "first_submitted": "2026-06-27 10:19:13.935 UTC",
+      "last_submitted": "2026-06-27 13:29:48.513 UTC",
+      "best_deliveries": 898,
+      "best_job": "37f9c7c7908a",
+      "final_deliveries": 878,
+      "points": 1081,
+      "scores": [
+        398,
+        883,
+        895,
+        897,
+        898,
+        878
+      ]
+    },
+    {
+      "team": "Equipo 14",
+      "submissions": 4,
+      "first_submitted": "2026-06-27 11:20:41.802 UTC",
+      "last_submitted": "2026-06-27 13:06:27.730 UTC",
+      "best_deliveries": 897,
+      "best_job": "4ebc9d45f10d",
+      "final_deliveries": 897,
+      "points": 0,
+      "scores": [
+        882,
+        868,
+        887,
+        897
+      ]
+    },
+    {
+      "team": "Equipo 16",
+      "submissions": 7,
+      "first_submitted": "2026-06-27 10:06:49.794 UTC",
+      "last_submitted": "2026-06-27 13:58:24.605 UTC",
+      "best_deliveries": 897,
+      "best_job": "96f62c7fdaa8",
+      "final_deliveries": 896,
+      "points": 7137,
+      "scores": [
+        24,
+        824,
+        895,
+        897,
+        893,
+        878,
+        896
+      ]
+    },
+    {
+      "team": "Equipo 15",
+      "submissions": 4,
+      "first_submitted": "2026-06-27 10:58:49.932 UTC",
+      "last_submitted": "2026-06-27 12:43:52.361 UTC",
+      "best_deliveries": 896,
+      "best_job": "31cb4f2c2474",
+      "final_deliveries": 877,
+      "points": 0,
+      "scores": [
+        858,
+        888,
+        896,
+        877
+      ]
+    },
+    {
+      "team": "Equipo 07",
+      "submissions": 3,
+      "first_submitted": "2026-06-27 10:36:29.707 UTC",
+      "last_submitted": "2026-06-27 13:11:32.493 UTC",
+      "best_deliveries": 895,
+      "best_job": "8726443032a0",
+      "final_deliveries": 895,
+      "points": 0,
+      "scores": [
+        450,
+        882,
+        895
+      ]
+    },
+    {
+      "team": "Equipo 11",
+      "submissions": 5,
+      "first_submitted": "2026-06-27 10:09:15.276 UTC",
+      "last_submitted": "2026-06-27 13:58:05.741 UTC",
+      "best_deliveries": 895,
+      "best_job": "75b0ac568321",
+      "final_deliveries": 895,
+      "points": 0,
+      "scores": [
+        97,
+        888,
+        895,
+        890,
+        895
+      ]
+    }
+  ],
+  "layout_groups": [
+    {
+      "hash": "b08f06ef090b601d9f3911891a13def10d8a9a295b185a26201ad738d401fddd",
+      "jobs": 33,
+      "teams": [
+        "Equipo 02",
+        "Equipo 03",
+        "Equipo 04",
+        "Equipo 05",
+        "Equipo 06",
+        "Equipo 07",
+        "Equipo 08",
+        "Equipo 09",
+        "Equipo 10",
+        "Equipo 11",
+        "Equipo 12",
+        "Equipo 13",
+        "Equipo 15",
+        "Equipo 16"
+      ],
+      "first_job": "7dd5b6c2a2bf",
+      "first_team": "Equipo 03",
+      "first_submitted": "2026-06-27 11:07:30.940 UTC",
+      "first_deliveries": 888,
+      "best_job": "64584e8c4c8d",
+      "best_team": "Equipo 08",
+      "best_deliveries": 904
+    },
+    {
+      "hash": "ebc2f70200d50281b2ea1169c71489777ccd6bffd201c7dcf24fd8016b0aa955",
+      "jobs": 19,
+      "teams": [
+        "Equipo 01",
+        "Equipo 02",
+        "Equipo 03",
+        "Equipo 04",
+        "Equipo 05",
+        "Equipo 06",
+        "Equipo 07",
+        "Equipo 08",
+        "Equipo 09",
+        "Equipo 10",
+        "Equipo 11",
+        "Equipo 14",
+        "Equipo 16"
+      ],
+      "first_job": "ecc405f020bd",
+      "first_team": "Equipo 16",
+      "first_submitted": "2026-06-27 10:06:49.794 UTC",
+      "first_deliveries": 24,
+      "best_job": "f692704ea634",
+      "best_team": "Equipo 02",
+      "best_deliveries": 884
+    },
+    {
+      "hash": "1773c3a3796b1bd18e104faac1f891de72ee01544407291f5d1de2ca947fb27f",
+      "jobs": 7,
+      "teams": [
+        "Equipo 01",
+        "Equipo 02",
+        "Equipo 03",
+        "Equipo 04",
+        "Equipo 05",
+        "Equipo 10"
+      ],
+      "first_job": "7a4738c9956c",
+      "first_team": "Equipo 04",
+      "first_submitted": "2026-06-27 12:23:10.721 UTC",
+      "first_deliveries": 907,
+      "best_job": "a591827df228",
+      "best_team": "Equipo 03",
+      "best_deliveries": 924
+    },
+    {
+      "hash": "d1da390a97edadfd28b1777145d691c2b85e71a576e167d3ebe40429efd53655",
+      "jobs": 6,
+      "teams": [
+        "Equipo 03",
+        "Equipo 05",
+        "Equipo 08",
+        "Equipo 10",
+        "Equipo 12",
+        "Equipo 13"
+      ],
+      "first_job": "c31ff1c81105",
+      "first_team": "Equipo 10",
+      "first_submitted": "2026-06-27 13:27:11.092 UTC",
+      "first_deliveries": 930,
+      "best_job": "3905ff4f9ead",
+      "best_team": "Equipo 03",
+      "best_deliveries": 931
+    },
+    {
+      "hash": "8453287c03d1081240117cfcb7bfa602f11fe61081adca4ad6b01bd289fe1673",
+      "jobs": 4,
+      "teams": [
+        "Equipo 10",
+        "Equipo 12",
+        "Equipo 14"
+      ],
+      "first_job": "e0a11fa0cd65",
+      "first_team": "Equipo 10",
+      "first_submitted": "2026-06-27 11:22:15.341 UTC",
+      "first_deliveries": 866,
+      "best_job": "27551e60ac6a",
+      "best_team": "Equipo 14",
+      "best_deliveries": 887
+    },
+    {
+      "hash": "5083ae7c04c1b63a87c08ad4db35e0b2f8bd18cb09aa0f166fa91e6f108bd5c1",
+      "jobs": 3,
+      "teams": [
+        "Equipo 06",
+        "Equipo 15"
+      ],
+      "first_job": "31cb4f2c2474",
+      "first_team": "Equipo 15",
+      "first_submitted": "2026-06-27 12:05:30.873 UTC",
+      "first_deliveries": 896,
+      "best_job": "d6ef1065be31",
+      "best_team": "Equipo 06",
+      "best_deliveries": 898
+    },
+    {
+      "hash": "9859eb7327776867a8438096b43ee5cb74ecfffe0aaf498e179853341376c46d",
+      "jobs": 1,
+      "teams": [
+        "Equipo 10"
+      ],
+      "first_job": "c15da13c3eaa",
+      "first_team": "Equipo 10",
+      "first_submitted": "2026-06-27 13:57:51.174 UTC",
+      "first_deliveries": 1008,
+      "best_job": "c15da13c3eaa",
+      "best_team": "Equipo 10",
+      "best_deliveries": 1008
+    },
+    {
+      "hash": "564c68b7b6844d37afeee8c5ca103cdb4cce062ff7b2b976cf535ebdddcb3bee",
+      "jobs": 1,
+      "teams": [
+        "Equipo 14"
+      ],
+      "first_job": "4ebc9d45f10d",
+      "first_team": "Equipo 14",
+      "first_submitted": "2026-06-27 13:06:27.730 UTC",
+      "first_deliveries": 897,
+      "best_job": "4ebc9d45f10d",
+      "best_team": "Equipo 14",
+      "best_deliveries": 897
+    },
+    {
+      "hash": "796ff70da09d2bb28d6fefa6ef9fe91685d85fe9cd88dcb295835172bc63f399",
+      "jobs": 1,
+      "teams": [
+        "Equipo 16"
+      ],
+      "first_job": "bf4184ae5b49",
+      "first_team": "Equipo 16",
+      "first_submitted": "2026-06-27 13:58:24.605 UTC",
+      "first_deliveries": 896,
+      "best_job": "bf4184ae5b49",
+      "best_team": "Equipo 16",
+      "best_deliveries": 896
+    },
+    {
+      "hash": "718e3c3df7231c997aee8b0a4b28d949042563d20f2c8c0cb90f9ec917605a26",
+      "jobs": 1,
+      "teams": [
+        "Equipo 13"
+      ],
+      "first_job": "a8b5d3da13ac",
+      "first_team": "Equipo 13",
+      "first_submitted": "2026-06-27 12:45:10.808 UTC",
+      "first_deliveries": 892,
+      "best_job": "a8b5d3da13ac",
+      "best_team": "Equipo 13",
+      "best_deliveries": 892
+    },
+    {
+      "hash": "ab324aa415fdbe8be202304c7acd0e99e672cfe17c5423e977992088a19e911b",
+      "jobs": 1,
+      "teams": [
+        "Equipo 08"
+      ],
+      "first_job": "0057f97f1a69",
+      "first_team": "Equipo 08",
+      "first_submitted": "2026-06-27 11:24:04.451 UTC",
+      "first_deliveries": 888,
+      "best_job": "0057f97f1a69",
+      "best_team": "Equipo 08",
+      "best_deliveries": 888
+    },
+    {
+      "hash": "a48586c5e379812e42fef659158af1fdd98c757280ee97146bdc5211446d1e04",
+      "jobs": 1,
+      "teams": [
+        "Equipo 02"
+      ],
+      "first_job": "372fcd5e99df",
+      "first_team": "Equipo 02",
+      "first_submitted": "2026-06-27 13:56:44.847 UTC",
+      "first_deliveries": 886,
+      "best_job": "372fcd5e99df",
+      "best_team": "Equipo 02",
+      "best_deliveries": 886
+    },
+    {
+      "hash": "e4e9e216926cfc613f14f1dfb7d93bd9ff00ce511a5033ff87c21e643d40fe07",
+      "jobs": 1,
+      "teams": [
+        "Equipo 07"
+      ],
+      "first_job": "7d200466801b",
+      "first_team": "Equipo 07",
+      "first_submitted": "2026-06-27 11:46:52.028 UTC",
+      "first_deliveries": 882,
+      "best_job": "7d200466801b",
+      "best_team": "Equipo 07",
+      "best_deliveries": 882
+    },
+    {
+      "hash": "08e477015b299bab660eb7b8fe07feb55b7953f96d3230cfc4802f7e735abb65",
+      "jobs": 1,
+      "teams": [
+        "Equipo 05"
+      ],
+      "first_job": "e21aef2581c6",
+      "first_team": "Equipo 05",
+      "first_submitted": "2026-06-27 11:32:38.574 UTC",
+      "first_deliveries": 881,
+      "best_job": "e21aef2581c6",
+      "best_team": "Equipo 05",
+      "best_deliveries": 881
+    },
+    {
+      "hash": "65b19ec4f36c565b1ac3fb92142ec5f4170d285df393d39c0897d8bfcffbfb73",
+      "jobs": 1,
+      "teams": [
+        "Equipo 16"
+      ],
+      "first_job": "cec1de88e43c",
+      "first_team": "Equipo 16",
+      "first_submitted": "2026-06-27 13:17:33.711 UTC",
+      "first_deliveries": 878,
+      "best_job": "cec1de88e43c",
+      "best_team": "Equipo 16",
+      "best_deliveries": 878
+    },
+    {
+      "hash": "35213c20868c7571d33027402871b3d0e0a21a7e44a7fe041cde9c82d323e88c",
+      "jobs": 1,
+      "teams": [
+        "Equipo 01"
+      ],
+      "first_job": "6cb8721bc2f7",
+      "first_team": "Equipo 01",
+      "first_submitted": "2026-06-27 13:02:46.059 UTC",
+      "first_deliveries": 877,
+      "best_job": "6cb8721bc2f7",
+      "best_team": "Equipo 01",
+      "best_deliveries": 877
+    },
+    {
+      "hash": "ce023401fe297de50deb7c3d310147e77062f681906f149cf58c5ac04897b1b4",
+      "jobs": 1,
+      "teams": [
+        "Equipo 12"
+      ],
+      "first_job": "9b551ead3510",
+      "first_team": "Equipo 12",
+      "first_submitted": "2026-06-27 11:26:01.833 UTC",
+      "first_deliveries": 860,
+      "best_job": "9b551ead3510",
+      "best_team": "Equipo 12",
+      "best_deliveries": 860
+    },
+    {
+      "hash": "34b8069596aa10e490e1e12ee58b3d3cb1b5203771a4821186f8347c03e9423b",
+      "jobs": 1,
+      "teams": [
+        "Equipo 15"
+      ],
+      "first_job": "e6856d86d6ff",
+      "first_team": "Equipo 15",
+      "first_submitted": "2026-06-27 10:58:49.932 UTC",
+      "first_deliveries": 858,
+      "best_job": "e6856d86d6ff",
+      "best_team": "Equipo 15",
+      "best_deliveries": 858
+    },
+    {
+      "hash": "fdda830b0f904d0d01fe3239b861cd6a904e89e71dd4e3eb99b952c26fe86eae",
+      "jobs": 1,
+      "teams": [
+        "Equipo 13"
+      ],
+      "first_job": "2ae0925dd208",
+      "first_team": "Equipo 13",
+      "first_submitted": "2026-06-27 11:31:54.116 UTC",
+      "first_deliveries": 831,
+      "best_job": "2ae0925dd208",
+      "best_team": "Equipo 13",
+      "best_deliveries": 831
+    },
+    {
+      "hash": "6d2a5b7e42c4300b3a468fb04c2ba64ef1610d4190bb01bdca50801f4b6f6766",
+      "jobs": 1,
+      "teams": [
+        "Equipo 13"
+      ],
+      "first_job": "9d741016f58e",
+      "first_team": "Equipo 13",
+      "first_submitted": "2026-06-27 10:25:48.864 UTC",
+      "first_deliveries": 548,
+      "best_job": "9d741016f58e",
+      "best_team": "Equipo 13",
+      "best_deliveries": 548
+    }
+  ],
+  "layout_transitions": [
+    {
+      "team": "Equipo 16",
+      "from_job": "ecc405f020bd",
+      "to_job": "9686b7a8fc67",
+      "submitted": "2026-06-27 10:45:56.713 UTC",
+      "layout_changed": false,
+      "delivery_delta": 800,
+      "deliveries": 824
+    },
+    {
+      "team": "Equipo 16",
+      "from_job": "9686b7a8fc67",
+      "to_job": "ba833bb4d9ea",
+      "submitted": "2026-06-27 11:24:39.916 UTC",
+      "layout_changed": true,
+      "delivery_delta": 71,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 16",
+      "from_job": "ba833bb4d9ea",
+      "to_job": "96f62c7fdaa8",
+      "submitted": "2026-06-27 12:01:54.009 UTC",
+      "layout_changed": false,
+      "delivery_delta": 2,
+      "deliveries": 897
+    },
+    {
+      "team": "Equipo 16",
+      "from_job": "96f62c7fdaa8",
+      "to_job": "d43dc4eb5632",
+      "submitted": "2026-06-27 12:40:10.186 UTC",
+      "layout_changed": false,
+      "delivery_delta": -4,
+      "deliveries": 893
+    },
+    {
+      "team": "Equipo 16",
+      "from_job": "d43dc4eb5632",
+      "to_job": "cec1de88e43c",
+      "submitted": "2026-06-27 13:17:33.711 UTC",
+      "layout_changed": true,
+      "delivery_delta": -15,
+      "deliveries": 878
+    },
+    {
+      "team": "Equipo 16",
+      "from_job": "cec1de88e43c",
+      "to_job": "bf4184ae5b49",
+      "submitted": "2026-06-27 13:58:24.605 UTC",
+      "layout_changed": true,
+      "delivery_delta": 18,
+      "deliveries": 896
+    },
+    {
+      "team": "Equipo 11",
+      "from_job": "b2c1f8fc5722",
+      "to_job": "6bee061afb0b",
+      "submitted": "2026-06-27 11:27:27.623 UTC",
+      "layout_changed": true,
+      "delivery_delta": 791,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 11",
+      "from_job": "6bee061afb0b",
+      "to_job": "75b0ac568321",
+      "submitted": "2026-06-27 12:06:19.127 UTC",
+      "layout_changed": false,
+      "delivery_delta": 7,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 11",
+      "from_job": "75b0ac568321",
+      "to_job": "121ea3b92294",
+      "submitted": "2026-06-27 12:49:08.904 UTC",
+      "layout_changed": false,
+      "delivery_delta": -5,
+      "deliveries": 890
+    },
+    {
+      "team": "Equipo 11",
+      "from_job": "121ea3b92294",
+      "to_job": "ff94edb65767",
+      "submitted": "2026-06-27 13:58:05.741 UTC",
+      "layout_changed": false,
+      "delivery_delta": 5,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "ce08283218fa",
+      "to_job": "8960d3b7806b",
+      "submitted": "2026-06-27 10:50:43.310 UTC",
+      "layout_changed": false,
+      "delivery_delta": 362,
+      "deliveries": 759
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "8960d3b7806b",
+      "to_job": "e0a11fa0cd65",
+      "submitted": "2026-06-27 11:22:15.341 UTC",
+      "layout_changed": true,
+      "delivery_delta": 107,
+      "deliveries": 866
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "e0a11fa0cd65",
+      "to_job": "d0f2389ad450",
+      "submitted": "2026-06-27 11:53:28.432 UTC",
+      "layout_changed": true,
+      "delivery_delta": 22,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "d0f2389ad450",
+      "to_job": "246962e09980",
+      "submitted": "2026-06-27 12:25:30.485 UTC",
+      "layout_changed": false,
+      "delivery_delta": 8,
+      "deliveries": 896
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "246962e09980",
+      "to_job": "a99d84c43de0",
+      "submitted": "2026-06-27 12:56:10.086 UTC",
+      "layout_changed": true,
+      "delivery_delta": 27,
+      "deliveries": 923
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "a99d84c43de0",
+      "to_job": "c31ff1c81105",
+      "submitted": "2026-06-27 13:27:11.092 UTC",
+      "layout_changed": true,
+      "delivery_delta": 7,
+      "deliveries": 930
+    },
+    {
+      "team": "Equipo 10",
+      "from_job": "c31ff1c81105",
+      "to_job": "c15da13c3eaa",
+      "submitted": "2026-06-27 13:57:51.174 UTC",
+      "layout_changed": true,
+      "delivery_delta": 78,
+      "deliveries": 1008
+    },
+    {
+      "team": "Equipo 05",
+      "from_job": "754cabbf101e",
+      "to_job": "e21aef2581c6",
+      "submitted": "2026-06-27 11:32:38.574 UTC",
+      "layout_changed": true,
+      "delivery_delta": 98,
+      "deliveries": 881
+    },
+    {
+      "team": "Equipo 05",
+      "from_job": "e21aef2581c6",
+      "to_job": "5074ff6d86e0",
+      "submitted": "2026-06-27 12:04:22.547 UTC",
+      "layout_changed": true,
+      "delivery_delta": 11,
+      "deliveries": 892
+    },
+    {
+      "team": "Equipo 05",
+      "from_job": "5074ff6d86e0",
+      "to_job": "78011f7a0fab",
+      "submitted": "2026-06-27 12:35:12.238 UTC",
+      "layout_changed": false,
+      "delivery_delta": 5,
+      "deliveries": 897
+    },
+    {
+      "team": "Equipo 05",
+      "from_job": "78011f7a0fab",
+      "to_job": "a05096a523b1",
+      "submitted": "2026-06-27 13:19:52.761 UTC",
+      "layout_changed": true,
+      "delivery_delta": 12,
+      "deliveries": 909
+    },
+    {
+      "team": "Equipo 05",
+      "from_job": "a05096a523b1",
+      "to_job": "9f6e36d64061",
+      "submitted": "2026-06-27 13:57:29.837 UTC",
+      "layout_changed": true,
+      "delivery_delta": 16,
+      "deliveries": 925
+    },
+    {
+      "team": "Equipo 06",
+      "from_job": "4fbc4e182b67",
+      "to_job": "53259a289ede",
+      "submitted": "2026-06-27 11:14:22.606 UTC",
+      "layout_changed": true,
+      "delivery_delta": 158,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 06",
+      "from_job": "53259a289ede",
+      "to_job": "956ee7ee8efc",
+      "submitted": "2026-06-27 11:45:17.217 UTC",
+      "layout_changed": false,
+      "delivery_delta": 6,
+      "deliveries": 894
+    },
+    {
+      "team": "Equipo 06",
+      "from_job": "956ee7ee8efc",
+      "to_job": "d6ef1065be31",
+      "submitted": "2026-06-27 12:19:16.226 UTC",
+      "layout_changed": true,
+      "delivery_delta": 4,
+      "deliveries": 898
+    },
+    {
+      "team": "Equipo 06",
+      "from_job": "d6ef1065be31",
+      "to_job": "03a1a666dba7",
+      "submitted": "2026-06-27 13:56:54.375 UTC",
+      "layout_changed": true,
+      "delivery_delta": 3,
+      "deliveries": 901
+    },
+    {
+      "team": "Equipo 02",
+      "from_job": "1b294895f546",
+      "to_job": "f692704ea634",
+      "submitted": "2026-06-27 11:02:40.292 UTC",
+      "layout_changed": false,
+      "delivery_delta": 2,
+      "deliveries": 884
+    },
+    {
+      "team": "Equipo 02",
+      "from_job": "f692704ea634",
+      "to_job": "98c76b34f0e0",
+      "submitted": "2026-06-27 11:45:50.129 UTC",
+      "layout_changed": true,
+      "delivery_delta": 6,
+      "deliveries": 890
+    },
+    {
+      "team": "Equipo 02",
+      "from_job": "98c76b34f0e0",
+      "to_job": "681e81189b62",
+      "submitted": "2026-06-27 12:16:34.450 UTC",
+      "layout_changed": false,
+      "delivery_delta": 6,
+      "deliveries": 896
+    },
+    {
+      "team": "Equipo 02",
+      "from_job": "681e81189b62",
+      "to_job": "55ed53e5f3ed",
+      "submitted": "2026-06-27 12:47:22.549 UTC",
+      "layout_changed": false,
+      "delivery_delta": -1,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 02",
+      "from_job": "55ed53e5f3ed",
+      "to_job": "2be229bd1d04",
+      "submitted": "2026-06-27 13:25:35.995 UTC",
+      "layout_changed": true,
+      "delivery_delta": 22,
+      "deliveries": 917
+    },
+    {
+      "team": "Equipo 02",
+      "from_job": "2be229bd1d04",
+      "to_job": "372fcd5e99df",
+      "submitted": "2026-06-27 13:56:44.847 UTC",
+      "layout_changed": true,
+      "delivery_delta": -31,
+      "deliveries": 886
+    },
+    {
+      "team": "Equipo 08",
+      "from_job": "e8ad7754c58a",
+      "to_job": "0057f97f1a69",
+      "submitted": "2026-06-27 11:24:04.451 UTC",
+      "layout_changed": true,
+      "delivery_delta": 129,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 08",
+      "from_job": "0057f97f1a69",
+      "to_job": "c0bc3a9e42a6",
+      "submitted": "2026-06-27 11:56:04.769 UTC",
+      "layout_changed": true,
+      "delivery_delta": 7,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 08",
+      "from_job": "c0bc3a9e42a6",
+      "to_job": "00c4bc775b0f",
+      "submitted": "2026-06-27 12:26:52.438 UTC",
+      "layout_changed": false,
+      "delivery_delta": -5,
+      "deliveries": 890
+    },
+    {
+      "team": "Equipo 08",
+      "from_job": "00c4bc775b0f",
+      "to_job": "64584e8c4c8d",
+      "submitted": "2026-06-27 12:57:40.056 UTC",
+      "layout_changed": false,
+      "delivery_delta": 14,
+      "deliveries": 904
+    },
+    {
+      "team": "Equipo 08",
+      "from_job": "64584e8c4c8d",
+      "to_job": "d9d5e50cbd41",
+      "submitted": "2026-06-27 13:55:10.580 UTC",
+      "layout_changed": true,
+      "delivery_delta": 26,
+      "deliveries": 930
+    },
+    {
+      "team": "Equipo 12",
+      "from_job": "9b551ead3510",
+      "to_job": "2f8ed9f4e6eb",
+      "submitted": "2026-06-27 11:57:07.641 UTC",
+      "layout_changed": true,
+      "delivery_delta": 30,
+      "deliveries": 890
+    },
+    {
+      "team": "Equipo 12",
+      "from_job": "2f8ed9f4e6eb",
+      "to_job": "6de9937942dc",
+      "submitted": "2026-06-27 12:29:40.734 UTC",
+      "layout_changed": false,
+      "delivery_delta": 3,
+      "deliveries": 893
+    },
+    {
+      "team": "Equipo 12",
+      "from_job": "6de9937942dc",
+      "to_job": "56e8c94f9fd8",
+      "submitted": "2026-06-27 13:01:19.500 UTC",
+      "layout_changed": true,
+      "delivery_delta": -16,
+      "deliveries": 877
+    },
+    {
+      "team": "Equipo 12",
+      "from_job": "56e8c94f9fd8",
+      "to_job": "9b2617f16f38",
+      "submitted": "2026-06-27 13:55:10.493 UTC",
+      "layout_changed": true,
+      "delivery_delta": 53,
+      "deliveries": 930
+    },
+    {
+      "team": "Equipo 03",
+      "from_job": "9c8ddcffc4f3",
+      "to_job": "7dd5b6c2a2bf",
+      "submitted": "2026-06-27 11:07:30.940 UTC",
+      "layout_changed": true,
+      "delivery_delta": 278,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 03",
+      "from_job": "7dd5b6c2a2bf",
+      "to_job": "70da7659e361",
+      "submitted": "2026-06-27 11:38:44.467 UTC",
+      "layout_changed": false,
+      "delivery_delta": 0,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 03",
+      "from_job": "70da7659e361",
+      "to_job": "6e45a3788f3d",
+      "submitted": "2026-06-27 12:16:50.336 UTC",
+      "layout_changed": false,
+      "delivery_delta": 9,
+      "deliveries": 897
+    },
+    {
+      "team": "Equipo 03",
+      "from_job": "6e45a3788f3d",
+      "to_job": "7b2dfd229091",
+      "submitted": "2026-06-27 12:47:28.194 UTC",
+      "layout_changed": true,
+      "delivery_delta": 12,
+      "deliveries": 909
+    },
+    {
+      "team": "Equipo 03",
+      "from_job": "7b2dfd229091",
+      "to_job": "a591827df228",
+      "submitted": "2026-06-27 13:18:03.982 UTC",
+      "layout_changed": false,
+      "delivery_delta": 15,
+      "deliveries": 924
+    },
+    {
+      "team": "Equipo 03",
+      "from_job": "a591827df228",
+      "to_job": "3905ff4f9ead",
+      "submitted": "2026-06-27 13:48:38.988 UTC",
+      "layout_changed": true,
+      "delivery_delta": 7,
+      "deliveries": 931
+    },
+    {
+      "team": "Equipo 13",
+      "from_job": "9d741016f58e",
+      "to_job": "2ae0925dd208",
+      "submitted": "2026-06-27 11:31:54.116 UTC",
+      "layout_changed": true,
+      "delivery_delta": 283,
+      "deliveries": 831
+    },
+    {
+      "team": "Equipo 13",
+      "from_job": "2ae0925dd208",
+      "to_job": "2645ba1ece2a",
+      "submitted": "2026-06-27 12:03:21.969 UTC",
+      "layout_changed": true,
+      "delivery_delta": 61,
+      "deliveries": 892
+    },
+    {
+      "team": "Equipo 13",
+      "from_job": "2645ba1ece2a",
+      "to_job": "a8b5d3da13ac",
+      "submitted": "2026-06-27 12:45:10.808 UTC",
+      "layout_changed": true,
+      "delivery_delta": 0,
+      "deliveries": 892
+    },
+    {
+      "team": "Equipo 13",
+      "from_job": "a8b5d3da13ac",
+      "to_job": "d3f597c7ceaa",
+      "submitted": "2026-06-27 13:38:37.465 UTC",
+      "layout_changed": true,
+      "delivery_delta": 26,
+      "deliveries": 918
+    },
+    {
+      "team": "Equipo 01",
+      "from_job": "dd10c86ea066",
+      "to_job": "6cb8721bc2f7",
+      "submitted": "2026-06-27 13:02:46.059 UTC",
+      "layout_changed": true,
+      "delivery_delta": -5,
+      "deliveries": 877
+    },
+    {
+      "team": "Equipo 01",
+      "from_job": "6cb8721bc2f7",
+      "to_job": "57aeeedbf2ae",
+      "submitted": "2026-06-27 13:33:35.975 UTC",
+      "layout_changed": true,
+      "delivery_delta": 31,
+      "deliveries": 908
+    },
+    {
+      "team": "Equipo 09",
+      "from_job": "8cb6baa8def4",
+      "to_job": "516d288495df",
+      "submitted": "2026-06-27 10:58:44.267 UTC",
+      "layout_changed": false,
+      "delivery_delta": 485,
+      "deliveries": 883
+    },
+    {
+      "team": "Equipo 09",
+      "from_job": "516d288495df",
+      "to_job": "a3d83de2263e",
+      "submitted": "2026-06-27 11:48:43.436 UTC",
+      "layout_changed": true,
+      "delivery_delta": 12,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 09",
+      "from_job": "a3d83de2263e",
+      "to_job": "b867727fbfbe",
+      "submitted": "2026-06-27 12:20:15.231 UTC",
+      "layout_changed": false,
+      "delivery_delta": 2,
+      "deliveries": 897
+    },
+    {
+      "team": "Equipo 09",
+      "from_job": "b867727fbfbe",
+      "to_job": "37f9c7c7908a",
+      "submitted": "2026-06-27 12:57:48.840 UTC",
+      "layout_changed": false,
+      "delivery_delta": 1,
+      "deliveries": 898
+    },
+    {
+      "team": "Equipo 09",
+      "from_job": "37f9c7c7908a",
+      "to_job": "ded569202010",
+      "submitted": "2026-06-27 13:29:48.513 UTC",
+      "layout_changed": false,
+      "delivery_delta": -20,
+      "deliveries": 878
+    },
+    {
+      "team": "Equipo 07",
+      "from_job": "4d8d233cbf6e",
+      "to_job": "7d200466801b",
+      "submitted": "2026-06-27 11:46:52.028 UTC",
+      "layout_changed": true,
+      "delivery_delta": 432,
+      "deliveries": 882
+    },
+    {
+      "team": "Equipo 07",
+      "from_job": "7d200466801b",
+      "to_job": "8726443032a0",
+      "submitted": "2026-06-27 13:11:32.493 UTC",
+      "layout_changed": true,
+      "delivery_delta": 13,
+      "deliveries": 895
+    },
+    {
+      "team": "Equipo 14",
+      "from_job": "aca05fcc279b",
+      "to_job": "df861caf6f55",
+      "submitted": "2026-06-27 11:58:40.901 UTC",
+      "layout_changed": true,
+      "delivery_delta": -14,
+      "deliveries": 868
+    },
+    {
+      "team": "Equipo 14",
+      "from_job": "df861caf6f55",
+      "to_job": "27551e60ac6a",
+      "submitted": "2026-06-27 12:34:51.565 UTC",
+      "layout_changed": false,
+      "delivery_delta": 19,
+      "deliveries": 887
+    },
+    {
+      "team": "Equipo 14",
+      "from_job": "27551e60ac6a",
+      "to_job": "4ebc9d45f10d",
+      "submitted": "2026-06-27 13:06:27.730 UTC",
+      "layout_changed": true,
+      "delivery_delta": 10,
+      "deliveries": 897
+    },
+    {
+      "team": "Equipo 15",
+      "from_job": "e6856d86d6ff",
+      "to_job": "9931a6df86c8",
+      "submitted": "2026-06-27 11:29:42.924 UTC",
+      "layout_changed": true,
+      "delivery_delta": 30,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 15",
+      "from_job": "9931a6df86c8",
+      "to_job": "31cb4f2c2474",
+      "submitted": "2026-06-27 12:05:30.873 UTC",
+      "layout_changed": true,
+      "delivery_delta": 8,
+      "deliveries": 896
+    },
+    {
+      "team": "Equipo 15",
+      "from_job": "31cb4f2c2474",
+      "to_job": "374b27415776",
+      "submitted": "2026-06-27 12:43:52.361 UTC",
+      "layout_changed": false,
+      "delivery_delta": -19,
+      "deliveries": 877
+    },
+    {
+      "team": "Equipo 04",
+      "from_job": "15c4cc5a483b",
+      "to_job": "3b8bedf4c0df",
+      "submitted": "2026-06-27 10:48:42.583 UTC",
+      "layout_changed": false,
+      "delivery_delta": 510,
+      "deliveries": 879
+    },
+    {
+      "team": "Equipo 04",
+      "from_job": "3b8bedf4c0df",
+      "to_job": "a1a8eb276980",
+      "submitted": "2026-06-27 11:19:50.230 UTC",
+      "layout_changed": true,
+      "delivery_delta": 9,
+      "deliveries": 888
+    },
+    {
+      "team": "Equipo 04",
+      "from_job": "a1a8eb276980",
+      "to_job": "593ee5cec900",
+      "submitted": "2026-06-27 11:51:23.094 UTC",
+      "layout_changed": true,
+      "delivery_delta": -139,
+      "deliveries": 749
+    },
+    {
+      "team": "Equipo 04",
+      "from_job": "593ee5cec900",
+      "to_job": "7a4738c9956c",
+      "submitted": "2026-06-27 12:23:10.721 UTC",
+      "layout_changed": true,
+      "delivery_delta": 158,
+      "deliveries": 907
+    }
+  ],
+  "code": {
+    "analyzed_jobs": 86,
+    "unique_code_files": 83,
+    "exact_code_copy_groups": [
+      {
+        "jobs": 2,
+        "teams": [
+          "Equipo 08",
+          "Equipo 10"
+        ],
+        "best_deliveries": 930,
+        "first_job": "c31ff1c81105"
+      },
+      {
+        "jobs": 2,
+        "teams": [
+          "Equipo 03",
+          "Equipo 16"
+        ],
+        "best_deliveries": 897,
+        "first_job": "96f62c7fdaa8"
+      },
+      {
+        "jobs": 2,
+        "teams": [
+          "Equipo 03",
+          "Equipo 04"
+        ],
+        "best_deliveries": 888,
+        "first_job": "7dd5b6c2a2bf"
+      }
+    ],
+    "feature_bands": [
+      {
+        "label": ">=920",
+        "jobs": 8,
+        "has_brain": 8,
+        "has_astar": 8,
+        "has_edge_reservations": 8,
+        "has_seed_config": 8,
+        "has_literal_layout": 2
+      },
+      {
+        "label": "895-919",
+        "jobs": 26,
+        "has_brain": 26,
+        "has_astar": 26,
+        "has_edge_reservations": 26,
+        "has_seed_config": 5,
+        "has_literal_layout": 1
+      },
+      {
+        "label": "850-894",
+        "jobs": 37,
+        "has_brain": 37,
+        "has_astar": 37,
+        "has_edge_reservations": 37,
+        "has_seed_config": 2,
+        "has_literal_layout": 4
+      },
+      {
+        "label": "<850",
+        "jobs": 15,
+        "has_brain": 1,
+        "has_astar": 4,
+        "has_edge_reservations": 1,
+        "has_seed_config": 0,
+        "has_literal_layout": 1
+      }
+    ]
+  }
+}

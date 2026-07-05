@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="525" viewBox="0 0 1120 525">
+<rect width="100%" height="100%" fill="#fbfaf7"/>
+<style>text{font-family:Inter,Arial,sans-serif;fill:#1f2933}.small{font-size:11px;fill:#65707c}.axis{stroke:#aab3bd;stroke-width:1}.grid{stroke:#e6e1d8;stroke-width:1}.title{font-size:18px;font-weight:700}.label{font-size:12px;font-weight:600}.tick{font-size:10px;fill:#65707c}</style>
+<text x="70" y="35" class="title">Layout diffusion across public submissions</text>
+<text x="70" y="57" class="small">Exact layouts spread through the room; the final demand-fitted layout appears once, at the end.</text>
+<line x1="210" x2="880" y1="95" y2="95" class="grid"/>
+<text x="194" y="99" text-anchor="end" class="label">1008 final layout</text>
+<circle cx="205" cy="95" r="4" fill="#d1495b"/>
+<text x="898" y="99" class="small">1 jobs · 1 teams · best 1008</text>
+<line x1="210" x2="880" y1="143" y2="143" class="grid"/>
+<text x="194" y="147" text-anchor="end" class="label">930 shared layout</text>
+<circle cx="205" cy="143" r="4" fill="#2a6fbb"/>
+<text x="898" y="147" class="small">6 jobs · 6 teams · best 931</text>
+<line x1="210" x2="880" y1="191" y2="191" class="grid"/>
+<text x="194" y="195" text-anchor="end" class="label">907 layout family</text>
+<circle cx="205" cy="191" r="4" fill="#269c7f"/>
+<text x="898" y="195" class="small">7 jobs · 6 teams · best 924</text>
+<line x1="210" x2="880" y1="239" y2="239" class="grid"/>
+<text x="194" y="243" text-anchor="end" class="label">largest common floor</text>
+<circle cx="205" cy="239" r="4" fill="#8f7a5f"/>
+<text x="898" y="243" class="small">33 jobs · 14 teams · best 904</text>
+<line x1="210" x2="880" y1="287" y2="287" class="grid"/>
+<text x="194" y="291" text-anchor="end" class="label">older common floor</text>
+<circle cx="205" cy="287" r="4" fill="#b08d62"/>
+<text x="898" y="291" class="small">19 jobs · 13 teams · best 884</text>
+<line x1="210" x2="880" y1="335" y2="335" class="grid"/>
+<text x="194" y="339" text-anchor="end" class="label">other reused layouts</text>
+<circle cx="205" cy="335" r="4" fill="#7c8fa3"/>
+<text x="898" y="339" class="small">7 jobs · 5 teams · best 898</text>
+<line x1="210" x2="880" y1="383" y2="383" class="grid"/>
+<text x="194" y="387" text-anchor="end" class="label">one-off layouts</text>
+<circle cx="205" cy="383" r="4" fill="#c6ccd3"/>
+<text x="898" y="387" class="small">13 jobs · 10 teams · best 897</text>
+<circle cx="880.0" cy="381.6" r="4.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="879.1" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="878.4" cy="96.4" r="6" fill="#d1495b" opacity="0.86"/>
+<circle cx="877.4" cy="140.2" r="5.2" fill="#2a6fbb" opacity="0.86"/>
+<circle cx="875.6" cy="237.6" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="875.2" cy="381.6" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="870.6" cy="140.2" r="5.2" fill="#2a6fbb" opacity="0.86"/>
+<circle cx="870.6" cy="140.2" r="5.2" fill="#2a6fbb" opacity="0.86"/>
+<circle cx="851.8" cy="141.6" r="5.2" fill="#2a6fbb" opacity="0.86"/>
+<circle cx="822.8" cy="144.4" r="4.4" fill="#2a6fbb" opacity="0.86"/>
+<circle cx="808.2" cy="192.4" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="797.3" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="789.7" cy="140.2" r="5.2" fill="#2a6fbb" opacity="0.86"/>
+<circle cx="785.1" cy="191.0" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="768.5" cy="193.8" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="763.3" cy="193.8" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="761.8" cy="384.4" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="744.4" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="729.7" cy="383.0" r="4.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="719.0" cy="383.0" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="714.8" cy="335.0" r="3.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="704.7" cy="240.4" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="704.3" cy="241.8" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="699.9" cy="192.4" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="679.6" cy="236.2" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="674.8" cy="193.8" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="674.5" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="668.1" cy="383.0" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="664.4" cy="335.0" r="3.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="653.6" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="639.3" cy="239.0" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="638.3" cy="335.0" r="3.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="623.3" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="615.2" cy="236.2" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="611.2" cy="237.6" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="604.5" cy="191.0" r="4.4" fill="#269c7f" opacity="0.86"/>
+<circle cx="596.0" cy="239.0" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="593.2" cy="336.4" r="4.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="586.1" cy="239.0" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="585.4" cy="237.6" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="555.7" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="553.4" cy="333.6" r="4.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="550.1" cy="239.0" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="547.2" cy="239.0" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="542.9" cy="239.0" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="533.6" cy="336.4" r="3.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="529.1" cy="236.2" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="526.1" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="518.5" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="512.5" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="504.8" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="499.4" cy="383.0" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="496.4" cy="236.2" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="494.9" cy="241.8" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="475.9" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="458.3" cy="381.6" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="456.1" cy="381.6" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="449.8" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="443.3" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="439.1" cy="380.2" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="435.2" cy="236.2" r="4.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="433.5" cy="384.4" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="428.2" cy="333.6" r="3.4" fill="#7c8fa3" opacity="0.86"/>
+<circle cx="423.7" cy="287.0" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="421.2" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="405.4" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="385.6" cy="240.4" r="3.4" fill="#8f7a5f" opacity="0.86"/>
+<circle cx="371.6" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="360.5" cy="384.4" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="360.2" cy="288.4" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="337.0" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="331.2" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="323.2" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="319.5" cy="287.0" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="295.8" cy="284.2" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="287.2" cy="288.4" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="281.8" cy="287.0" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="276.1" cy="284.2" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="275.4" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="264.9" cy="384.4" r="3.4" fill="#c6ccd3" opacity="0.5"/>
+<circle cx="255.5" cy="284.2" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="245.9" cy="288.4" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="245.7" cy="287.0" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="217.0" cy="287.0" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="212.2" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<circle cx="210.0" cy="289.8" r="3.4" fill="#b08d62" opacity="0.86"/>
+<line x1="789.660253025392" x2="702.660253025392" y1="143" y2="120" stroke="#4b5563" stroke-width="1"/>
+<text x="697.660253025392" y="115" class="tick">930 appears</text>
+<line x1="851.7618764299853" x2="738.7618764299853" y1="143" y2="178" stroke="#4b5563" stroke-width="1"/>
+<text x="733.7618764299853" y="173" class="tick">same layout reaches 931</text>
+<line x1="878.387975914174" x2="765" y1="95" y2="85" stroke="#4b5563" stroke-width="1"/>
+<text x="760" y="80" class="tick">1008 final</text>
+<line x1="210" x2="210" y1="77" y2="423" stroke="#eee9df" stroke-width="1"/>
+<text x="210" y="447" text-anchor="middle" class="tick">10:06</text>
+<line x1="545" x2="545" y1="77" y2="423" stroke="#eee9df" stroke-width="1"/>
+<text x="545" y="447" text-anchor="middle" class="tick">12:02</text>
+<line x1="880" x2="880" y1="77" y2="423" stroke="#eee9df" stroke-width="1"/>
+<text x="880" y="447" text-anchor="middle" class="tick">13:58</text>
+<line x1="210" x2="880" y1="425" y2="425" class="axis"/>
+<text x="70" y="480" class="small">Unique replay layouts: 20. Exact code files: 83 among 86 successful submissions.</text>
+<text x="70" y="500" class="small">Dot size roughly tracks deliveries: small early attempts, larger 895+ plateau submissions, largest 1008.</text>
+</svg>
